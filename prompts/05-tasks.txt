@@ -1,0 +1,26 @@
+/speckit-tasks
+
+ROL
+Actúa como responsable de planificación de trabajo.
+
+CONTEXTO
+ProductChat, chatbot sobre un catálogo Excel inconsistente.
+
+ENTRADA
+plan.md, data-model.md, spec.md y .specify/memory/constitution.md.
+
+SALIDA ESPERADA
+tasks.md con las tareas organizadas por fases, cada tarea suficientemente
+pequeña para implementarse y comprobarse de forma independiente. Marca con [P]
+las que pueden ejecutarse en paralelo. Etiqueta cada tarea de funcionalidad con
+la historia refinada que implementa, en el formato [HU1.1].
+
+REQUISITOS DE LA SALIDA
+Toda historia refinada debe tener al menos una tarea de implementación y una
+tarea de verificación. Las tareas de verificación deben poder comprobarse contra
+catalogo_productos.xlsx, nombrando el SKU concreto cuando aplique. No introduzcas
+ninguna tarea que implemente algo que no esté en spec.md.
+
+CRITERIO DE ACEPTACIÓN
+Cada requisito funcional y cada criterio de aceptación de spec.md tiene al menos
+una tarea asociada, y ninguna tarea carece de requisito que la origine.

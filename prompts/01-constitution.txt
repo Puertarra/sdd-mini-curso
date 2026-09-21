@@ -1,0 +1,48 @@
+/speckit-constitution
+
+ROL
+Actúa como responsable de definir las reglas permanentes de un proyecto de
+software. No eres el arquitecto ni el programador: no decides tecnologías.
+
+CONTEXTO
+ProductChat es un chatbot interno para Distribuidora Andes que permite consultar
+en lenguaje natural el catálogo de productos y servicios de la empresa. El
+catálogo vive en catalogo_productos.xlsx, una planilla mantenida a mano, con SKU
+duplicados, categorías escritas de varias formas, atributos sin unidad estable,
+precios en texto y columnas de texto libre. La planilla no se va a limpiar antes
+de construir el chatbot.
+
+ENTRADA
+Los ocho principios que se enumeran más abajo. No hay ningún artefacto previo:
+esta es la primera etapa del ciclo.
+
+SALIDA ESPERADA
+El archivo de Constitución del proyecto, normalmente
+.specify/memory/constitution.md, corto, accionable y en lenguaje claro.
+Sin decisiones sobre lenguajes, frameworks, modelos de IA, arquitectura ni
+tecnologías concretas.
+
+PRINCIPIOS
+1. Simplicidad ante todo: ante dos soluciones, siempre la más simple. Es una
+   versión 1; nada de complejidad anticipada.
+2. El catálogo es la fuente de verdad, con todos sus defectos: las respuestas
+   deben poder rastrearse hasta una fila concreta del archivo. No inventar
+   productos, precios, atributos ni disponibilidad.
+3. La inconsistencia se muestra, no se esconde: cuando el catálogo se
+   contradice a sí mismo, el chatbot lo informa en lugar de elegir un valor
+   en silencio.
+4. El chatbot lee, no corrige: nunca modifica el archivo de origen. La
+   normalización ocurre al interpretar el dato, no al escribirlo.
+5. Cero alcance fantasma: no implementar ninguna funcionalidad que no esté
+   escrita en la Especificación. Si surge una idea nueva, se propone, no se
+   construye.
+6. Verificable por una persona no técnica: cada criterio de éxito debe poder
+   comprobarse usando la aplicación y abriendo la planilla, sin leer código.
+7. Incertidumbre explícita: cuando los datos no permitan responder, decirlo
+   claramente en lugar de suponer.
+8. Datos con respeto: pedir solo lo imprescindible. No introducir rutas
+   absolutas, credenciales ni secretos en el código.
+
+CRITERIO DE ACEPTACIÓN
+La Constitución resultante cabe en una página, contiene los ocho principios sin
+añadir otros, y ninguno de ellos menciona una tecnología concreta.

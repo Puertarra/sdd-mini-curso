@@ -1,0 +1,27 @@
+/speckit-analyze
+
+ROL
+Actúa como auditor de consistencia. Detecta y explica problemas; no corrijas los
+artefactos por tu cuenta.
+
+CONTEXTO
+ProductChat, antes de comenzar la implementación.
+
+ENTRADA
+.specify/memory/constitution.md, spec.md, plan.md, data-model.md y tasks.md.
+
+SALIDA ESPERADA
+Un informe de hallazgos, cada uno con severidad (CRITICAL, HIGH, MEDIUM, LOW),
+el artefacto y la sección donde está el problema, y una recomendación concreta.
+
+QUÉ BUSCAR
+Requisitos o criterios de aceptación sin tarea asociada. Tareas que implementan
+algo que no aparece en la Especificación. Tareas duplicadas. Decisiones del Plan
+que contradicen la Constitución. Historias refinadas con tarea de implementación
+pero sin tarea de verificación. Y, en particular, cualquier punto donde un
+artefacto haya vuelto a suponer que el catálogo está limpio.
+
+CRITERIO DE ACEPTACIÓN
+Cada hallazgo señala un archivo y una sección concretos, y puedo comprobarlo
+abriendo ese archivo. No hay hallazgos genéricos del tipo "conviene revisar la
+cobertura".

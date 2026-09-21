@@ -1,0 +1,37 @@
+/speckit-specify
+
+ROL
+Actúa como analista de requisitos. Tu tarea es formalizar una especificación
+escrita a mano, no diseñar la solución ni elegir tecnologías.
+
+CONTEXTO
+ProductChat es un chatbot interno para Distribuidora Andes que permite consultar
+en lenguaje natural el catálogo de productos y servicios de la empresa. El
+catálogo vive en catalogo_productos.xlsx y está sucio a propósito: SKU
+duplicados con precios distintos, categorías escritas de varias formas,
+atributos sin unidad estable, precios en texto y datos escondidos en columnas de
+texto libre. La planilla no se va a limpiar.
+
+ENTRADA
+El archivo spec_servilleta_productchat.md, en la raíz del proyecto. Léelo
+completo antes de empezar. Puedes consultar también catalogo_productos.xlsx para
+comprobar los ejemplos que la servilleta menciona, y .specify/memory/constitution.md
+para no contradecir sus principios.
+
+SALIDA ESPERADA
+La especificación formal del proyecto, spec.md, con estas secciones: objetivo y
+contexto de negocio, usuarios, historias de usuario identificadas HU1, HU2…,
+requisitos funcionales numerados RF1, RF2…, reglas de negocio numeradas RN1,
+RN2…, criterios de aceptación numerados CA1, CA2…, casos límite y fuera de
+alcance.
+
+RESTRICCIONES
+No decidas lenguajes, frameworks, modelos de IA, arquitectura ni bibliotecas: eso
+corresponde al Plan. No resuelvas por tu cuenta ninguna de las preguntas abiertas
+de la sección 9 de la servilleta. Antes de redactar, hazme las preguntas que
+necesites para resolver cualquier ambigüedad.
+
+CRITERIO DE ACEPTACIÓN
+Cada criterio de aceptación de spec.md se puede comprobar abriendo
+catalogo_productos.xlsx y usando la aplicación, sin leer código. Ningún requisito
+supone que el catálogo esté limpio. Las preguntas abiertas siguen abiertas.

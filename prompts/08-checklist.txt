@@ -1,0 +1,18 @@
+/speckit-checklist
+
+ROL
+Actúa como revisor especializado en [UX / seguridad / accesibilidad / otro].
+
+CONTEXTO
+[Qué parte de ProductChat se está revisando y por qué.]
+
+ENTRADA
+spec.md, en particular los requisitos incorporados en esta iteración.
+
+SALIDA ESPERADA
+Una lista de comprobación de [dominio], donde cada punto se responde con sí o no
+usando la aplicación.
+
+CRITERIO DE ACEPTACIÓN
+Ningún punto de la lista requiere leer código para responderse, y ninguno es
+subjetivo: "la interfaz se ve profesional" no es un punto válido.

@@ -1,0 +1,25 @@
+/speckit-plan
+
+ROL
+Actúa como arquitecto sobre una base de código existente.
+
+CONTEXTO
+Esta feature modifica [ÁREA AFECTADA] de una aplicación que ya funciona.
+
+ENTRADA
+La nueva especificación, más [RUTA DEL PLAN ANTERIOR] y [RUTA DEL MODELO DE
+DATOS ANTERIOR], de donde debes tomar el stack tecnológico, las convenciones, el
+modelo de datos y la estructura del proyecto.
+
+SALIDA ESPERADA
+Un plan que reutilice las decisiones técnicas existentes y describa únicamente
+lo que cambia.
+
+RESTRICCIONES
+No sustituyas ni rediseñes el stack, las convenciones ni el modelo de datos salvo
+que los nuevos requisitos lo hagan imprescindible. Limita los cambios a lo que
+pide la nueva especificación.
+
+CRITERIO DE ACEPTACIÓN
+El plan enumera explícitamente qué partes del sistema no toca. Ningún componente
+que ya funcionaba aparece rediseñado sin una justificación escrita.

@@ -1,0 +1,27 @@
+/speckit-implement
+
+ROL
+Actúa como desarrollador. Implementa lo que está especificado, ni más ni menos.
+
+CONTEXTO
+ProductChat, con los artefactos ya revisados por Analyze y corregidos.
+
+ENTRADA
+tasks.md como guía principal, más spec.md, plan.md, data-model.md y
+.specify/memory/constitution.md. El archivo de datos es catalogo_productos.xlsx.
+
+SALIDA ESPERADA
+El código de la aplicación, con las tareas de tasks.md marcadas a medida que se
+completan. Para cada tarea: implementar, ejecutar su verificación y corregir
+hasta que pase.
+
+RESTRICCIONES
+No modifiques catalogo_productos.xlsx bajo ninguna circunstancia. No implementes
+nada que no tenga una tarea en tasks.md; si detectas que falta algo, detente y
+dímelo en lugar de añadirlo. Si una tarea resulta ambigua, pregunta antes de
+decidir.
+
+CRITERIO DE ACEPTACIÓN
+La aplicación arranca. Cada criterio de aceptación de spec.md puede comprobarse
+manualmente. El archivo catalogo_productos.xlsx tiene la misma fecha de
+modificación que antes de empezar.

@@ -1,0 +1,41 @@
+/speckit-plan
+
+ROL
+Actúa como arquitecto de software. Propón el cómo y justifícalo; la decisión
+final es mía.
+
+CONTEXTO
+ProductChat es una primera versión que debe ser fácil de desplegar y mantener.
+La fuente de datos es catalogo_productos.xlsx, una planilla con SKU duplicados,
+categorías inconsistentes, atributos sin unidad estable y precios en texto. La
+planilla no se corrige ni se sustituye.
+
+ENTRADA
+spec.md, .specify/memory/constitution.md y el propio archivo
+catalogo_productos.xlsx, que puedes inspeccionar para conocer la forma real de
+los datos.
+
+SALIDA ESPERADA
+plan.md con la arquitectura, el stack y la estructura del proyecto;
+data-model.md distinguiendo explícitamente la forma cruda de la planilla del
+modelo interno normalizado, y describiendo la transformación entre ambos;
+research.md justificando las decisiones con alternativas.
+
+DECISIONES QUE DEBES RESOLVER EXPLÍCITAMENTE
+Dónde se aplica la normalización, al cargar o en cada consulta. Cuándo se lee el
+Excel. Cómo se representa un dato ausente frente a un cero y frente a un texto
+como "consultar". Cómo se representa un SKU con dos valores en conflicto sin
+colapsarlos. Y qué parte del trabajo hace el modelo de lenguaje y qué parte es
+código determinista.
+
+RESTRICCIONES
+Prioriza la simplicidad según la Constitución. No añadas infraestructura que la
+especificación no necesite. No propongas generar una copia limpia de la planilla
+ni deduplicar en silencio: ambas cosas contradicen la Constitución. Explica cada
+decisión relevante también en términos comprensibles para una persona no técnica.
+
+CRITERIO DE ACEPTACIÓN
+El modelo de datos permite sostener dos valores distintos para el mismo SKU. La
+interpretación de las unidades es determinista y no depende del modelo de
+lenguaje. Cada componente que añade complejidad está justificado por un
+requisito concreto de spec.md.

@@ -1,0 +1,28 @@
+/speckit-specify
+
+ROL
+Actúa como analista de requisitos sobre un producto ya implementado.
+
+CONTEXTO
+[NOMBRE DEL PRODUCTO] está funcionando. Quiero incorporar cambios sin romper lo
+que ya hay.
+
+ENTRADA
+La especificación existente, [RUTA DE LA SPEC ANTERIOR].
+
+CAMBIOS SOLICITADOS
+1. [CAMBIO 1]
+2. [CAMBIO 2]
+3. [CAMBIO N]
+
+SALIDA ESPERADA
+Una especificación nueva y separada, que describa únicamente estos cambios y
+declare explícitamente qué comportamiento existente se mantiene intacto.
+
+RESTRICCIONES
+Mantén sin cambios el comportamiento existente que no esté afectado
+explícitamente por estos requisitos. No reescribas la especificación anterior.
+
+CRITERIO DE ACEPTACIÓN
+La nueva especificación puede leerse junto a la anterior sin contradecirla, y
+sus criterios de aceptación son verificables sin leer código.

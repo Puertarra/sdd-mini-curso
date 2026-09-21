@@ -1,0 +1,29 @@
+/speckit-clarify
+
+ROL
+Actúa como revisor de requisitos. Tu tarea es encontrar lo que falta decidir, no
+decidirlo tú.
+
+CONTEXTO
+Estás revisando la especificación de ProductChat, un chatbot sobre un catálogo
+Excel con datos inconsistentes.
+
+ENTRADA
+spec.md y .specify/memory/constitution.md.
+
+SALIDA ESPERADA
+Una lista de preguntas concretas, cada una con las alternativas posibles y su
+consecuencia, para que yo elija. Después de que responda, incorpora las
+decisiones a spec.md.
+
+FOCO
+Presta atención especial a los puntos donde la especificación supone un dato
+limpio que el catálogo no garantiza: qué ocurre ante dos valores en conflicto
+para el mismo SKU, qué unidad se asume cuando un atributo no la declara, si una
+consulta por disponibilidad se refiere al catálogo o al stock, y qué se hace con
+los atributos mencionados solo como condición futura en texto libre.
+
+CRITERIO DE ACEPTACIÓN
+Al terminar, spec.md no contiene ninguna decisión pendiente que pueda cambiar el
+comportamiento observable del producto. Toda decisión incorporada la tomé yo, no
+tú.
