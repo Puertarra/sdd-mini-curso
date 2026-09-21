@@ -1,5 +1,7 @@
 # Mini curso de Spec Driven Development
 
+**Andrés Leiva-Araos** · Facultad de Ingeniería, Universidad del Desarrollo
+
 Material para un mini curso de **Spec Driven Development (SDD)** dirigido a estudiantes de pregrado de Ingeniería. El curso recorre el ciclo completo, desde las reglas del proyecto hasta el código, usando **GitHub Spec Kit** como capa de método y **Claude Code** o **Codex** como capa de agente.
 
 ## El caso
@@ -71,6 +73,18 @@ Todos los prompts del curso declaran cinco cosas: **rol**, **contexto** del caso
 
 Los módulos reproducen cada prompt, pero la versión de referencia es siempre el archivo en `prompts/`.
 
+## Autoría
+
+Material desarrollado por **Andrés Leiva-Araos**, Facultad de Ingeniería, Universidad del Desarrollo.
+
+## Licencia
+
+Este material está licenciado bajo [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.es) (CC BY-SA 4.0). Puedes usarlo, adaptarlo y redistribuirlo, incluso con fines comerciales, siempre que cites la autoría y distribuyas las obras derivadas bajo la misma licencia. Ver [`LICENSE`](LICENSE).
+
+Cita sugerida:
+
+> Leiva-Araos, A. (2026). *Mini curso de Spec Driven Development*. Facultad de Ingeniería, Universidad del Desarrollo. CC BY-SA 4.0.
+
 ## Nota
 
-`_original/` conserva la versión del material anterior a la revisión de consistencia. No forma parte del curso.
+`_original/` conserva la versión del material anterior a la revisión de consistencia. No forma parte del curso y está excluido del repositorio por `.gitignore`.
