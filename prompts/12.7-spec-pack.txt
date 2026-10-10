@@ -1,0 +1,25 @@
+ROL
+Actúa como responsable de la entrega. Ensamblas lo que existe; no agregas
+evidencia nueva.
+
+CONTEXTO
+El reconocimiento de ProductChat terminó. Hay que entregar a otra persona
+todo lo necesario para entender el sistema y cambiarlo con seguridad.
+
+ENTRADA
+Los archivos de reconocimiento/, la Spec inversa en specs/ y
+tests/test_characterization.py.
+
+SALIDA ESPERADA
+SPEC-PACK.md en la raíz, con: versión estudiada y alcance; un resumen de una
+página para un lector no técnico; un índice con enlaces a cada documento,
+la Spec y las pruebas; una tabla de trazabilidad RN → A → prueba; los
+comandos para ejecutar las pruebas; y lo que quedó sin verificar.
+
+RESTRICCIONES
+Enlaza solo archivos que existan. No declares el sistema completamente
+documentado si el alcance no lo permite.
+
+CRITERIO DE ACEPTACIÓN
+Todos los enlaces abren, los comandos de prueba se ejecutan, y SPEC-PACK.md
+declara explícitamente qué quedó fuera del alcance o sin verificar.

@@ -1,0 +1,26 @@
+/speckit-plan
+
+ROL
+Actúa como arquitecto de una sola capacidad dentro de un equipo. Planificas
+tu Spec; no tocas el trabajo del otro agente.
+
+CONTEXTO
+Trabajas en la rama y la carpeta que te asignó el coordinador. Tu capacidad
+consume el resultado de consulta que ya construye ProductChat.
+
+ENTRADA
+La spec.md de tu Spec, revisada después de la revisión cruzada, la tabla de
+distribución del coordinador, el plan.md de SPEC001 y CLAUDE.md.
+
+SALIDA ESPERADA
+El plan.md de tu Spec, que reutilice el stack y el resultado de consulta
+existentes, liste los archivos que vas a crear o modificar y defina las
+pruebas con los SKU de tus criterios de aceptación.
+
+RESTRICCIONES
+Modifica solo los archivos que la tabla te asigna. Si necesitas cambiar un
+componente compartido, informa al coordinador en lugar de hacerlo. No
+reimplementes la selección de productos.
+
+CRITERIO DE ACEPTACIÓN
+Todos los archivos del plan están en tu columna de la tabla de distribución.

@@ -58,7 +58,7 @@ manualmente. El archivo catalogo_productos.xlsx tiene la misma fecha de
 modificación que antes de empezar.
 ```
 
-> Este prompt está en `prompts/07-implement.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/07.1-implement.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 
 El agente utiliza los artefactos generados previamente, especialmente:

@@ -1,0 +1,37 @@
+/speckit-specify
+
+ROL
+Actúa como analista de requisitos. Formalizas una decisión de negocio ya
+tomada; no la diseñas ni la implementas.
+
+CONTEXTO
+Una corrección urgente ocultó del chatbot los productos sin stock sin pasar
+por SDD, y la auditoría encontró que también ocultaba productos disponibles y
+servicios. La necesidad es legítima; la regla estaba mal. Esta Spec resuelve
+además la pregunta abierta PA2 de la servilleta: cuando el vendedor pregunta
+qué productos "tienen", pregunta por lo que se puede vender hoy.
+
+ENTRADA
+La spec.md de SPEC001, el informe de auditoría, .specify/memory/constitution.md
+y catalogo_productos.xlsx.
+
+SALIDA ESPERADA
+La spec.md de la nueva Spec, que referencie a SPEC001 y SPEC003 y declare de
+forma explícita qué criterios de aceptación de SPEC001 cambian.
+
+REGLAS YA DECIDIDAS
+- Sin stock (0 o "agotado"): el producto no aparece en las respuestas.
+- Disponible (número mayor que cero, "Si" o "si"): aparece.
+- Stock no informado (celda vacía): aparece, con un aviso.
+- Servicios: el stock no aplica y nunca los oculta.
+- Las reglas valen para todas las consultas, con o sin filtros.
+
+RESTRICCIONES
+Inspecciona el código existente y distingue lo que ya cumple la regla de lo
+que hay que corregir. No aceptes un comportamiento solo porque ya está
+implementado. Fuera de alcance: modificar el catálogo y gestionar inventario.
+
+CRITERIO DE ACEPTACIÓN
+La Spec actualiza CA1 de SPEC001: "¿qué notebooks tienen 32 GB de RAM?" pasa
+a devolver NB-1005, NB-1007 y NB-1012. NB-1007 aparece, NB-1009 no, y SRV-5001
+sigue apareciendo.

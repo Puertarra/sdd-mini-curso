@@ -1,0 +1,29 @@
+/speckit-specify
+
+ROL
+Actúa como analista que documenta un sistema existente. Describes lo que
+hace hoy; no especificas una funcionalidad nueva.
+
+CONTEXTO
+ProductChat está en producción sin especificación. El reconocimiento ya
+reconstruyó sus reglas, sus anomalías y las decisiones de la entrevista, y
+las pruebas de caracterización protegen su comportamiento actual.
+
+ENTRADA
+Los archivos de reconocimiento/, tests/test_characterization.py y
+catalogo_productos.xlsx.
+
+SALIDA ESPERADA
+Una spec.md de la consulta del catálogo con cuatro partes separadas:
+requisitos vigentes confirmados en la entrevista, comportamientos observados
+que nadie ha confirmado, anomalías conocidas con su referencia A, y cambios
+propuestos para el futuro. Los criterios de aceptación citan pruebas de
+caracterización.
+
+RESTRICCIONES
+No conviertas una anomalía accidental en requisito. No declares confirmado
+lo que solo respondió una simulación. No generes plan, tareas ni código.
+
+CRITERIO DE ACEPTACIÓN
+Cada requisito vigente remite a una prueba que pasa, y cada anomalía de
+anomalias.md aparece en la Spec.

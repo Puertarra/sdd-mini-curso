@@ -35,7 +35,7 @@ abriendo ese archivo. No hay hallazgos genéricos del tipo "conviene revisar la
 cobertura".
 ```
 
-> Este prompt está en `prompts/06-analyze.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/06.1-analyze.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 
 Analyze no es una etapa: es una **puerta de calidad**, igual que Clarify. No produce un artefacto nuevo, revisa los que ya existen. Y cumple una función distinta de la de Clarify. Mientras **Clarify revisa la Especificación individualmente**, Analyze comprueba la **consistencia y cobertura entre los diferentes artefactos del proyecto**.

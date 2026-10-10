@@ -1,0 +1,27 @@
+ROL
+Actúa como coordinador de la integración. Integras ramas ya verificadas, una
+por vez; no amplías el alcance de ninguna.
+
+CONTEXTO
+SPEC005 y SPEC006 están implementadas en sus ramas, cada una con sus pruebas
+aprobadas. Hay que llevarlas a main sin romper lo que ya funciona.
+
+ENTRADA
+Las ramas de SPEC005 y SPEC006, la tabla de distribución y los informes de
+pruebas de cada agente.
+
+SALIDA ESPERADA
+Un orden de integración justificado por dependencias y por riesgo, la
+integración rama por rama con las pruebas ejecutadas después de cada merge,
+y un informe con commits, conflictos resueltos y pendientes.
+
+RESTRICCIONES
+Confirma que main está limpio antes de empezar. No integres la segunda rama
+hasta que la primera pase las pruebas. Si aparece un conflicto, resuélvelo
+según las Specs; no elijas en bloque la versión de una rama ni elimines
+pruebas para que pasen.
+
+CRITERIO DE ACEPTACIÓN
+En main, la consulta "Notebooks con precio máximo 1.000.000" produce el
+mismo resultado en el CSV y en el resumen: NB-1001 con sus dos precios y el
+aviso de conflicto, y NB-1015.

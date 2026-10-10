@@ -1,0 +1,23 @@
+ROL
+Actúa como auditor de trazabilidad. Revisas; no modificas archivos.
+
+CONTEXTO
+SPEC003 está implementada e integrada en main. Hay que demostrar que un
+requisito concreto llega desde la especificación hasta una prueba y un commit.
+
+ENTRADA
+La carpeta de SPEC003 en specs/ (spec.md, plan.md, tasks.md), el código, las
+pruebas y el historial de Git.
+
+SALIDA ESPERADA
+Una tabla para el requisito "el precio máximo incluye el valor límite" con
+cinco filas: requisito, decisión del plan, tarea, prueba y commit, cada una
+con su ruta, nombre o hash real.
+
+RESTRICCIONES
+Cita solo rutas, nombres de prueba y hashes que existan. Si falta un eslabón,
+márcalo como faltante en lugar de suponerlo.
+
+CRITERIO DE ACEPTACIÓN
+Puedo abrir cada ruta y ejecutar git show con cada hash, y la prueba citada
+verifica que PER-4001, de 34.990, aparece con un precio máximo de 34.990.

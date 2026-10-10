@@ -1,0 +1,29 @@
+ROL
+Actúa como desarrollador de pruebas. Fijas el comportamiento actual; no lo
+corriges ni lo juzgas.
+
+CONTEXTO
+Antes de cambiar ProductChat hay que proteger lo que hace hoy, incluidos sus
+comportamientos raros. Una prueba de caracterización registra la salida que
+la versión recibida produce ante una entrada conocida.
+
+ENTRADA
+reconocimiento/reglas.md, reconocimiento/anomalias.md, el código y
+catalogo_productos.xlsx.
+
+SALIDA ESPERADA
+tests/test_characterization.py con una prueba por cada regla RN y cada
+anomalía A ejecutable, usando el punto de entrada real del sistema y el
+catálogo real. Cada prueba indica en su docstring la regla o anomalía que
+protege.
+
+RESTRICCIONES
+Los valores esperados salen de ejecutar la versión recibida: no los calcules
+dentro de la prueba ni reproduzcas el algoritmo. Si la respuesta del chatbot
+incluye texto generado, compara solo los datos estables (SKU, precios,
+avisos), no el texto completo. Usa el runner existente y no cambies código de
+producción.
+
+CRITERIO DE ACEPTACIÓN
+Todas las pruebas pasan sobre la versión recibida, y ninguna pasaría si el
+comportamiento que protege cambiara.

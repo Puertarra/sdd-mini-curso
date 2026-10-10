@@ -136,7 +136,7 @@ Cada requisito funcional y cada criterio de aceptación de spec.md tiene al meno
 una tarea asociada, y ninguna tarea carece de requisito que la origine.
 ```
 
-> Este prompt está en `prompts/05-tasks.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/05.1-tasks.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 
 Normalmente no es necesario proporcionar un nuevo prompt detallado. El agente utiliza los artefactos creados durante las etapas anteriores:

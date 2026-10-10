@@ -267,7 +267,7 @@ Por eso, todos los prompts de este curso declaran cinco cosas:
 | **Salida esperada** | Qué produce, con qué estructura y en qué archivo |
 | **Criterio de aceptación** | Cómo sabemos, sin leer código, que la salida sirve |
 
-Los prompts están en la carpeta `prompts/`, numerados según el orden en que se usan, listos para copiar. Los módulos los reproducen, pero la versión de referencia es siempre el archivo.
+Los prompts están en la carpeta `prompts/`, listos para copiar. Su número indica el módulo donde se usan y su orden dentro de él: `03.2-clarify.txt` es el segundo prompt del módulo 03. Los módulos los reproducen, pero la versión de referencia es siempre el archivo.
 
 ## El encadenamiento
 
@@ -275,12 +275,12 @@ Cada prompt consume lo que produjo el anterior. Esa es la propiedad que hace que
 
 | # | Prompt | Entrada | Salida |
 |---|---|---|---|
-| 1 | `prompts/01-constitution.txt` | decisiones humanas | `.specify/memory/constitution.md` |
-| 2 | `prompts/02-specify.txt` | `spec_servilleta_productchat.md`, `constitution.md`, `catalogo_productos.xlsx` | `spec.md` |
-| 3 | `prompts/03-clarify.txt` | `spec.md`, `constitution.md` | `spec.md` actualizado |
-| 4 | `prompts/04-plan.txt` | `spec.md`, `constitution.md`, `catalogo_productos.xlsx` | `plan.md`, `data-model.md`, `research.md` |
-| 5 | `prompts/05-tasks.txt` | `plan.md`, `data-model.md`, `spec.md` | `tasks.md` |
-| 6 | `prompts/06-analyze.txt` | todos los anteriores | informe de hallazgos |
-| 7 | `prompts/07-implement.txt` | `tasks.md` y los demás artefactos | código verificado |
+| 1 | `prompts/02.1-constitution.txt` | decisiones humanas | `.specify/memory/constitution.md` |
+| 2 | `prompts/03.1-specify.txt` | `spec_servilleta_productchat.md`, `constitution.md`, `catalogo_productos.xlsx` | `spec.md` |
+| 3 | `prompts/03.2-clarify.txt` | `spec.md`, `constitution.md` | `spec.md` actualizado |
+| 4 | `prompts/04.1-plan.txt` | `spec.md`, `constitution.md`, `catalogo_productos.xlsx` | `plan.md`, `data-model.md`, `research.md` |
+| 5 | `prompts/05.1-tasks.txt` | `plan.md`, `data-model.md`, `spec.md` | `tasks.md` |
+| 6 | `prompts/06.1-analyze.txt` | todos los anteriores | informe de hallazgos |
+| 7 | `prompts/07.1-implement.txt` | `tasks.md` y los demás artefactos | código verificado |
 
 Si al llegar a un paso no existe el archivo que su prompt declara como entrada, es que algo se saltó. Esa comprobación, hecha antes de pegar el prompt, ahorra la mayoría de los problemas.

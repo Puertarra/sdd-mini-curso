@@ -1,0 +1,33 @@
+ROL
+Actúa como analista que reconstruye reglas de negocio desde el
+comportamiento. Describes lo que el sistema hace, no lo que debería hacer.
+
+CONTEXTO
+Ya existe el mapa de ProductChat y el flujo de una consulta. Ahora hay que
+extraer las reglas que el sistema aplica sobre un catálogo lleno de casos
+ambiguos: precios vacíos o en texto, SKU duplicados, categorías con varias
+grafías, unidades de memoria distintas y stock en texto.
+
+ENTRADA
+reconocimiento/mapa.md, reconocimiento/flujo-consulta.md, el código y
+catalogo_productos.xlsx.
+
+SALIDA ESPERADA
+reconocimiento/reglas.md con reglas numeradas RN-01, RN-02… Cada una con
+enunciado en lenguaje de negocio, SKU de ejemplo, salida observada, evidencia
+y estado: observada (se ejecutó) o inferida (solo se leyó en el código).
+
+QUÉ SONDEAR
+Ejecuta al menos estas consultas y registra la respuesta exacta: Periféricos
+con precio máximo 34.990; notebooks con 32 GB de RAM; precio de NB-1001;
+precio de NB-1009; stock de SRV-5001; RAM de NB-1009; Monitores con precio
+máximo 150.000.
+
+RESTRICCIONES
+No atribuyas intención a partir del código. Si un resultado parece un error,
+regístralo igual como regla observada y anótalo para el registro de
+anomalías.
+
+CRITERIO DE ACEPTACIÓN
+Cada consulta de la lista tiene su salida registrada, y cada regla cita al
+menos un SKU que la reproduce.

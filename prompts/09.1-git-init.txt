@@ -1,0 +1,26 @@
+ROL
+Actúa como responsable del repositorio de ProductChat. Preparas el control de
+versiones; no modificas código ni artefactos.
+
+CONTEXTO
+ProductChat ya está implementado: la primera parte del curso terminó con su
+código, sus artefactos SDD, catalogo_productos.xlsx y
+spec_servilleta_productchat.md dentro del proyecto. Spec Kit 1.0.8 no crea un
+repositorio Git al inicializar un proyecto.
+
+ENTRADA
+La raíz del proyecto ProductChat.
+
+SALIDA ESPERADA
+Un repositorio Git con la rama main, un .gitignore revisado y un primer commit
+que incluya el código, las pruebas, .specify/memory/constitution.md, la carpeta
+specs/, catalogo_productos.xlsx y spec_servilleta_productchat.md.
+
+RESTRICCIONES
+Si Git ya está inicializado, no lo reinicialices: informa su estado. Excluye
+entornos virtuales, cachés y archivos generados. No excluyas el catálogo: sus
+SKU son la referencia de los criterios de aceptación.
+
+CRITERIO DE ACEPTACIÓN
+git status no muestra cambios pendientes, y git show --stat HEAD lista el
+catálogo y los archivos de specs/.

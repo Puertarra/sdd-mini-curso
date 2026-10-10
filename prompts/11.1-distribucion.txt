@@ -1,0 +1,27 @@
+ROL
+Actúa como coordinador de un equipo de dos agentes. Repartes trabajo y
+asignas responsables; no modificas archivos.
+
+CONTEXTO
+ProductChat va a sumar dos capacidades que consumen el mismo resultado de
+consulta: exportarlo a CSV (SPEC005) y resumirlo en texto para un correo al
+cliente (SPEC006). Ese resultado ya aplica reglas definidas en otras Specs:
+conflictos de precio y duplicados (SPEC001), filtros (SPEC003) y stock
+(SPEC004). Las dos capacidades las implementarán agentes distintos.
+
+ENTRADA
+Las Specs de specs/, el código, las pruebas y CLAUDE.md.
+
+SALIDA ESPERADA
+Dos tablas. La primera, de reglas comunes: cada regla que ambas capacidades
+consumen y la única Spec dueña de esa regla. La segunda, de trabajo: Spec,
+agente responsable, rama, archivos propios, archivos compartidos con su
+responsable único, dependencias y pruebas necesarias.
+
+RESTRICCIONES
+Distingue entre leer una Spec y tener disponible su código. Si un componente
+común necesita cambios, asígnalo a un solo agente.
+
+CRITERIO DE ACEPTACIÓN
+Cada regla común tiene exactamente una Spec dueña, y ningún archivo tiene dos
+responsables.

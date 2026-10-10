@@ -1,0 +1,30 @@
+ROL
+Actúa como ingeniero que recibe un sistema sin documentación. Observas y
+describes; no modificas código ni datos.
+
+CONTEXTO
+Recibiste una copia de ProductChat hecha por otra persona, sin specs/ y sin
+la servilleta. Sabes que es un chatbot que consulta catalogo_productos.xlsx,
+pero no sabes qué reglas implementa. El primer commit del repositorio es la
+versión recibida.
+
+ENTRADA
+El código, las pruebas existentes, CLAUDE.md si existe y
+catalogo_productos.xlsx.
+
+SALIDA ESPERADA
+Dos archivos en reconocimiento/: mapa.md, con los módulos, su
+responsabilidad en lenguaje de negocio, el punto de entrada y los comandos
+comprobados para ejecutar y probar; y flujo-consulta.md, con el recorrido de
+la consulta "Periféricos con precio máximo 34.990" desde la pregunta hasta la
+respuesta, indicando en qué función se lee, se normaliza, se filtra y se
+responde.
+
+RESTRICCIONES
+Cada afirmación cita su fuente: ruta y líneas, o una ejecución con su entrada
+y su salida. Distingue lo que ejecutaste de lo que solo leíste. No corrijas
+nada que parezca un error: anótalo.
+
+CRITERIO DE ACEPTACIÓN
+Otra persona puede seguir flujo-consulta.md abriendo las rutas que cita y
+llegar a la misma respuesta ejecutando la consulta.

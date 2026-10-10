@@ -1,0 +1,27 @@
+ROL
+Actúa como auditor de comportamiento. Clasificas lo extraño; no lo corriges.
+
+CONTEXTO
+Las reglas de ProductChat ya están registradas. Algunas parecen errores, y
+algunas reglas se aplican de forma distinta según el camino: la misma
+característica puede interpretarse de una manera al buscar y de otra al
+responder por un producto.
+
+ENTRADA
+reconocimiento/reglas.md, reconocimiento/flujo-consulta.md y el código.
+
+SALIDA ESPERADA
+reconocimiento/anomalias.md con entradas A-01, A-02… Cada una con
+comportamiento, SKU que la reproduce, evidencia, impacto, clasificación
+provisional (intencional, accidental, defecto o pendiente) y la pregunta que
+la resolvería. Incluye los casos donde dos caminos tratan distinto el mismo
+dato, por ejemplo la RAM de NB-1009 en una búsqueda y en una consulta de
+atributo.
+
+RESTRICCIONES
+No cierres una clasificación sin evidencia; ante la duda, déjala pendiente.
+No decidas qué camino es el correcto.
+
+CRITERIO DE ACEPTACIÓN
+Cada anomalía se reproduce con su SKU, y cada clasificación que no sea
+"pendiente" cita su evidencia.

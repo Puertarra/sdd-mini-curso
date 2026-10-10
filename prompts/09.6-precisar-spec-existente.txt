@@ -1,0 +1,26 @@
+ROL
+Actúa como analista de requisitos sobre una Spec todavía en desarrollo.
+Precisas un requisito; no amplías el alcance.
+
+CONTEXTO
+Durante la implementación de SPEC003 apareció un caso que la Spec no resuelve:
+NB-1001 tiene dos precios en conflicto, 899.990 y 949.990, y con un precio
+máximo de 920.000 uno cumple el filtro y el otro no. La decisión ya está
+tomada: el producto aparece, con el aviso de conflicto e indicando cuál de sus
+precios cumple el filtro.
+
+ENTRADA
+La spec.md, el plan.md y el tasks.md de SPEC003.
+
+SALIDA ESPERADA
+spec.md actualizado con esa regla y su criterio de aceptación, más una lista de
+los cambios que exige en plan.md, tasks.md y las pruebas, separando lo ya hecho
+de lo pendiente.
+
+RESTRICCIONES
+Conserva el identificador y la carpeta: no crees una Spec nueva. No borres
+decisiones vigentes del plan ni tareas ya completadas.
+
+CRITERIO DE ACEPTACIÓN
+El diff solo toca la carpeta de SPEC003, y spec.md contiene un criterio
+verificable con NB-1001 y un precio máximo de 920.000.

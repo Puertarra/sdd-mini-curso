@@ -1,0 +1,31 @@
+ROL
+Actúa como revisor de consistencia entre Specs. Detectas conflictos; no
+editas documentos ni decides cómo resolverlos.
+
+CONTEXTO
+SPEC005 (exportar a CSV) y SPEC006 (resumen para correo) se redactaron por
+separado y consumen el mismo resultado de consulta. Las reglas que ese
+resultado aplica pertenecen a SPEC001, SPEC003 y SPEC004.
+
+ENTRADA
+Las spec.md de SPEC005 y SPEC006, leídas desde sus ramas con
+git show RAMA:RUTA, y las spec.md de SPEC001, SPEC003 y SPEC004 en main.
+Registra el commit de cada rama que revisas.
+
+SALIDA ESPERADA
+Una tabla de hallazgos con: concepto, qué dice cada Spec consumidora, qué
+dice la Spec dueña de la regla, SKU que lo reproduce y propuesta de
+resolución.
+
+QUÉ BUSCAR
+Reglas redefinidas en una Spec consumidora. Casos que una Spec trata y la
+otra no. En especial: precios en conflicto, stock vacío, servicios y
+productos duplicados bajo dos SKU.
+
+RESTRICCIONES
+No cambies de rama ni edites archivos. Distingue un conflicto confirmado de
+un riesgo que todavía no se puede confirmar.
+
+CRITERIO DE ACEPTACIÓN
+Cada hallazgo se reproduce con un SKU del catálogo, y la propuesta de
+resolución apunta a la Spec que debe cambiar.

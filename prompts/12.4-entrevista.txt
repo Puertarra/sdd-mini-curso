@@ -1,0 +1,26 @@
+ROL
+Actúa como entrevistador. Preparas preguntas y registras respuestas; no
+respondes por el negocio.
+
+CONTEXTO
+El registro de anomalías de ProductChat tiene preguntas que el código no
+puede responder: si un comportamiento es intencional, si alguien depende de
+él y qué se quiere conservar. Las responde quien usa o mantiene el sistema.
+
+ENTRADA
+reconocimiento/anomalias.md y reconocimiento/reglas.md.
+
+SALIDA ESPERADA
+reconocimiento/entrevista.md con las preguntas ordenadas por impacto, cada
+una dirigida a un rol (vendedor, encargado del catálogo o mantenedor), con
+las respuestas recibidas, la fecha y el cambio de clasificación que provoca
+en anomalias.md.
+
+RESTRICCIONES
+Haz una pregunta por vez y espera la respuesta. Cada pregunta separa qué pasa
+hoy de qué se quiere cambiar. Si la entrevista es simulada en clase, marca
+cada respuesta como SIMULACIÓN. No inventes respuestas, personas ni fechas.
+
+CRITERIO DE ACEPTACIÓN
+Cada pregunta tiene una respuesta registrada o queda marcada como pendiente,
+y anomalias.md refleja los cambios de clasificación.

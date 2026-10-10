@@ -42,7 +42,7 @@ Capa de método  → GitHub Spec Kit v1.0.8
 Capa de agente  → Claude Code o Codex
 ```
 
-> **Sobre la versión.** Spec Kit evoluciona rápido y los nombres de sus comandos han cambiado entre versiones. Todo el material de este curso está comprobado contra la **versión 1.0.8**. Si instalas otra, revisa la sección "Comprobar la integración" antes de seguir.
+> **Sobre la versión.** Spec Kit evoluciona rápido, y la forma de sus operaciones puede cambiar de una versión a otra. Todo el material de este curso está comprobado contra la **versión 1.0.8**. Si instalas otra, revisa la sección "Comprobar la integración" antes de seguir.
 
 ## 1. Preparar la capa de agente
 
@@ -79,9 +79,9 @@ uv --version
 ## 3. Instalar GitHub Spec Kit
 
 > ⚠️ **Antes de ejecutar este comando, comprueba la versión.** Este material está fijado a la
-> v1.0.8 y comprobado contra ella. Spec Kit se desarrolla rápido y **ya cambió una vez la sintaxis
-> de sus operaciones**: las versiones anteriores a la 1.0 usaban `/speckit.specify`, con punto,
-> donde la 1.0.8 usa `/speckit-specify`, con guion. Antes de instalar, revisa las releases del
+> v1.0.8 y comprobado contra ella. Spec Kit se desarrolla rápido, y **la forma de invocar sus
+> operaciones no es estable**: en la 1.0.8 depende del agente, y ni siquiera coincide con la
+> notación que usa su propia documentación. Antes de instalar, revisa las releases del
 > repositorio (`github.com/github/spec-kit`) y decide conscientemente: o instalas la v1.0.8 y el
 > material funciona tal cual, o instalas una más reciente y asumes que tendrás que comprobar los
 > nombres de las operaciones y adaptar los prompts. Lo que no conviene es instalar `@main` sin
@@ -212,7 +212,18 @@ No es necesario modificar manualmente estos archivos. El agente los utilizará c
 
 ## 7. Comprobar la integración
 
-Una vez iniciado el agente dentro del proyecto, comprobamos que aparecen disponibles las operaciones de Spec Kit. Se invocan como **slash commands**, escribiendo una barra seguida del nombre:
+Una vez iniciado el agente dentro del proyecto, comprobamos que aparecen disponibles las operaciones de Spec Kit. Cómo se escriben depende del agente:
+
+| Agente | Cómo se invoca | Dónde las instala Spec Kit |
+|---|---|---|
+| Claude Code | `/speckit-specify` | `.claude/skills/` |
+| Codex | `$speckit-specify` | `.agents/skills/` |
+
+El curso escribe las operaciones en la forma de Claude Code. Si usas Codex, cambia la barra por el signo pesos, `$speckit-plan` en lugar de `/speckit-plan`; el resto de cada prompt vale igual.
+
+Vas a encontrar una tercera forma, con punto: `/speckit.specify`. Es la notación de referencia de la documentación oficial de Spec Kit y de muchos tutoriales, pero no es la que escribes en tu agente con la versión 1.0.8.
+
+En Claude Code, las operaciones del curso son estas:
 
 ```text
 /speckit-constitution
@@ -224,7 +235,7 @@ Una vez iniciado el agente dentro del proyecto, comprobamos que aparecen disponi
 /speckit-implement
 ```
 
-Conviene entender bien qué es cada cosa, porque es fácil confundirlas. Lo que Spec Kit instala en el proyecto es una **skill**: un archivo de instrucciones que el agente leerá. Lo que nosotros escribimos es un **slash command**: la forma de invocar esa skill. Usamos la barra precisamente para que la acción quede explícita, tanto para el agente como para quien lee después lo que se hizo. Escribir `/speckit-plan` deja constancia de que se ejecutó la etapa de planificación; pedirlo en lenguaje corriente, no.
+Conviene entender bien qué es cada cosa, porque es fácil confundirlas. Lo que Spec Kit instala en el proyecto es una **skill**: un archivo de instrucciones que el agente leerá. Lo que nosotros escribimos es la invocación de esa skill: en Claude Code, un **slash command**. La invocamos explícitamente para que la acción quede explícita, tanto para el agente como para quien lee después lo que se hizo. Escribir `/speckit-plan` deja constancia de que se ejecutó la etapa de planificación; pedirlo en lenguaje corriente, no.
 
 Por tanto, cuando escribimos:
 
@@ -241,9 +252,9 @@ Spec Kit dice QUÉ PROCESO seguir.
 El agente ejecuta ese proceso.
 ```
 
-Spec Kit 1.0.8 instala además `/speckit-checklist`, que usaremos en el último módulo, y otras dos operaciones que quedan fuera de este curso: `/speckit-converge`, que evalúa el código existente y añade el trabajo pendiente como tareas, y `/speckit-taskstoissues`.
+Spec Kit 1.0.8 instala además `/speckit-checklist`, que usaremos en el módulo 08; `/speckit-converge`, que evalúa el código existente y añade el trabajo pendiente como tareas, y que aparece en el módulo 10; y `/speckit-taskstoissues`, que queda fuera del curso.
 
-> **Si instalaste otra versión.** Los nombres de las operaciones han cambiado entre versiones de Spec Kit: las anteriores a la 1.0 usaban un punto, `/speckit.specify`, en lugar del guion. Puedes ver los nombres exactos de tu instalación listando el directorio correspondiente, `ls .claude/skills/` o `ls .agents/skills/`, y sustituirlos en los prompts del curso.
+> **Si instalaste otra versión.** Los nombres y la forma de invocar las operaciones pueden cambiar entre versiones de Spec Kit. Puedes ver los nombres exactos de tu instalación listando el directorio correspondiente, `ls .claude/skills/` o `ls .agents/skills/`, y sustituirlos en los prompts del curso.
 
 ## Entorno preparado
 

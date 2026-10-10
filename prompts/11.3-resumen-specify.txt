@@ -1,0 +1,32 @@
+/speckit-specify
+
+ROL
+Actúa como analista de requisitos. Especificas una capacidad que consume
+reglas ya definidas; no las redefines.
+
+CONTEXTO
+El vendedor responde por correo a sus clientes y hoy copia a mano los datos
+que le da ProductChat. Quiere un resumen en texto del resultado de una
+consulta, listo para pegar. El resultado ya aplica las reglas de SPEC001
+(conflictos de precio y duplicados), SPEC003 (filtros) y SPEC004 (stock).
+
+ENTRADA
+Las spec.md de SPEC001, SPEC003 y SPEC004, y catalogo_productos.xlsx.
+
+SALIDA ESPERADA
+La spec.md de SPEC006, en el directorio specs/006-resumen-correo (úsalo como
+SPECIFY_FEATURE_DIRECTORY): un texto plano con una línea por producto del
+resultado, con nombre, SKU, precio y disponibilidad, más los avisos que
+correspondan.
+
+RESTRICCIONES
+Resume exactamente el resultado mostrado: no vuelvas a consultar el catálogo
+ni a seleccionar productos. Si una regla de las Specs anteriores no alcanza
+para decidir cómo presentar un caso, regístralo como pregunta abierta; no
+inventes una regla nueva. Fuera de alcance: enviar el correo, redactar el
+mensaje completo y modificar el catálogo.
+
+CRITERIO DE ACEPTACIÓN
+La Spec define cómo aparecen NB-1001, con dos precios en conflicto, y
+MON-3001 y MON-3004, que son el mismo monitor bajo dos SKU, citando la regla
+de origen de cada caso.

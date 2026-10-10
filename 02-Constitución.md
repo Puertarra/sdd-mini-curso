@@ -113,7 +113,7 @@ La Constitución resultante cabe en una página, contiene los ocho principios si
 añadir otros, y ninguno de ellos menciona una tecnología concreta.
 ```
 
-> Este prompt está en `prompts/01-constitution.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/02.1-constitution.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 Spec Kit utilizará estas instrucciones para generar el archivo de Constitución del proyecto, normalmente:
 

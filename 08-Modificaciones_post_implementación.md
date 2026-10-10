@@ -56,7 +56,7 @@ La nueva especificación puede leerse junto a la anterior sin contradecirla, y
 sus criterios de aceptación son verificables sin leer código.
 ```
 
-> Este prompt está en `prompts/09-modificacion-specify.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/08.1-modificacion-specify.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 ### Ejemplo ProductChat
 
@@ -93,7 +93,7 @@ Spec Kit puede crear una nueva especificación, por ejemplo `SPEC002`, mantenien
 
 ## 2. Clarificar los nuevos requisitos
 
-Antes de planificar, ejecutamos Clarify con el prompt de `prompts/03-clarify.txt`, ajustando su bloque de contexto a los nuevos requisitos:
+Antes de planificar, ejecutamos Clarify con el prompt de `prompts/03.2-clarify.txt`, ajustando su bloque de contexto a los nuevos requisitos:
 
 ```text
 /speckit-clarify
@@ -128,7 +128,7 @@ Ningún punto de la lista requiere leer código para responderse, y ninguno es
 subjetivo: "la interfaz se ve profesional" no es un punto válido.
 ```
 
-> Este prompt está en `prompts/08-checklist.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/08.2-checklist.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 ### Ejemplo ProductChat
 
@@ -186,7 +186,7 @@ El plan enumera explícitamente qué partes del sistema no toca. Ningún compone
 que ya funcionaba aparece rediseñado sin una justificación escrita.
 ```
 
-> Este prompt está en `prompts/10-modificacion-plan.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/08.3-modificacion-plan.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 ### Ejemplo ProductChat
 

@@ -1,0 +1,26 @@
+/speckit-plan
+
+ROL
+Actúa como arquitecto sobre código que ya contiene una versión defectuosa de
+esta regla. Propones el cómo; la decisión final es mía.
+
+CONTEXTO
+La rama ya tiene un parche que oculta productos según su stock. No hay que
+rehacerlo, sino corregirlo: la normalización del stock en tres estados que
+definió SPEC001 ya existe y es la que debe usarse.
+
+ENTRADA
+La spec.md de SPEC004, el plan.md y el data-model.md de SPEC001, el informe
+de auditoría y CLAUDE.md.
+
+SALIDA ESPERADA
+El plan.md de SPEC004, que reutilice el stack y la normalización existentes,
+describa solo los ajustes al parche y defina las pruebas con los SKU de los
+criterios de aceptación.
+
+RESTRICCIONES
+No sustituyas el stack ni el modelo de datos. No dupliques la normalización
+del stock en otro componente.
+
+CRITERIO DE ACEPTACIÓN
+El plan indica, para cada hallazgo de la auditoría, qué cambio lo resuelve.

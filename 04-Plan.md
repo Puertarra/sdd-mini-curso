@@ -116,7 +116,7 @@ lenguaje. Cada componente que añade complejidad está justificado por un
 requisito concreto de spec.md.
 ```
 
-> Este prompt está en `prompts/04-plan.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/04.1-plan.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 A partir de este punto, el agente puede formular preguntas cuando una decisión técnica importante no pueda determinarse razonablemente a partir de la información disponible.
 

@@ -1,0 +1,8 @@
+EJERCICIO CONTROLADO. Este prompt no sigue el contrato del curso a propósito:
+es un pedido urgente como los que producen Spec Drift. Úsalo solo en la rama
+de práctica.
+
+Urgente: los vendedores están ofreciendo productos que no tenemos. Modifica
+directamente el código de ProductChat para que no muestre ningún producto cuyo
+stock no sea un número mayor que cero. No toques las Specs, el plan ni las
+tareas; las pruebas las agregamos después.

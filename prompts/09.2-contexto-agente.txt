@@ -1,0 +1,26 @@
+ROL
+Actúa como mantenedor técnico de ProductChat. Documentas cómo se trabaja en el
+repositorio; no cambias el comportamiento del sistema.
+
+CONTEXTO
+ProductChat tiene Constitución, especificaciones y planes, pero el agente
+empieza cada sesión sin saber cómo está organizado el código ni cómo se prueba.
+Esa información vive en un archivo de contexto: CLAUDE.md en Claude Code,
+AGENTS.md en Codex.
+
+ENTRADA
+.specify/memory/constitution.md, los plan.md de specs/ y el código del proyecto.
+
+SALIDA ESPERADA
+CLAUDE.md (o AGENTS.md) en la raíz, de una página como máximo, con: propósito
+del sistema en dos líneas, stack vigente, organización del código, dónde se
+normaliza el catálogo, comandos comprobados para ejecutar y probar, y la
+convención de ramas y commits por Spec.
+
+RESTRICCIONES
+Referencia la Constitución y la carpeta specs/; no copies su contenido. Si no
+pudiste comprobar un comando, márcalo como no verificado. No inventes datos.
+
+CRITERIO DE ACEPTACIÓN
+Cada comando del archivo se ejecuta sin error en el proyecto, y el archivo no
+repite ninguna regla que ya esté en la Constitución.

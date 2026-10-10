@@ -234,7 +234,7 @@ comportamiento observable del producto. Toda decisión incorporada la tomé yo, 
 tú.
 ```
 
-> Este prompt está en `prompts/03-clarify.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/03.2-clarify.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 
 **Clarify** analiza la especificación buscando **ambigüedades, decisiones no resueltas, requisitos incompletos o situaciones en las que la IA tendría que asumir información que no ha sido definida**. Cuando detecta estos puntos, formula preguntas para que sea el usuario quien tome las decisiones necesarias.
@@ -311,7 +311,7 @@ catalogo_productos.xlsx y usando la aplicación, sin leer código. Ningún requi
 supone que el catálogo esté limpio. Las preguntas abiertas siguen abiertas.
 ```
 
-> Este prompt está en `prompts/02-specify.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+> Este prompt está en `prompts/03.1-specify.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
 
 Dos detalles merecen atención. El prompt prohíbe explícitamente resolver las preguntas abiertas de la servilleta, porque ese es trabajo de Clarify y de una persona. Y su criterio de aceptación exige que ningún requisito suponga un catálogo limpio, que es la forma de comprobar que la precariedad del dato sobrevivió a la formalización.
 

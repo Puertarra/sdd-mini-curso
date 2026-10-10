@@ -1,0 +1,28 @@
+/speckit-plan
+
+ROL
+Actúa como arquitecto sobre una base de código que ya funciona. Propones el
+cómo de SPEC003; la decisión final es mía.
+
+CONTEXTO
+ProductChat ya normaliza categorías, precios y conflictos de SKU al leer el
+catálogo. Los filtros deben aplicarse sobre ese catálogo normalizado, no
+rehacer la normalización.
+
+ENTRADA
+La spec.md de SPEC003, el plan.md y el data-model.md de SPEC001,
+.specify/memory/constitution.md y CLAUDE.md.
+
+SALIDA ESPERADA
+El plan.md de SPEC003, que reutilice el stack y el modelo de datos de SPEC001
+y describa solo lo que cambia: dónde se aplican los filtros, cómo se trata un
+precio ausente y cómo se trata un SKU en conflicto frente a un precio máximo.
+
+RESTRICCIONES
+No sustituyas el stack ni el modelo de datos. Si cambia algún comando o
+convención, incluye una tarea para actualizar CLAUDE.md, registrando solo lo
+que sirva a futuras Specs.
+
+CRITERIO DE ACEPTACIÓN
+El plan enumera los componentes que no toca, y cada componente nuevo se
+justifica con un requisito de SPEC003.

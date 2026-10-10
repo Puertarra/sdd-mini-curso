@@ -1,0 +1,38 @@
+/speckit-specify
+
+ROL
+Actúa como analista de requisitos. Especificas una capacidad nueva de
+ProductChat; no la diseñas ni la implementas.
+
+CONTEXTO
+ProductChat consulta catalogo_productos.xlsx, un catálogo con categorías
+escritas de varias formas, precios en texto o vacíos y SKU duplicados con
+precios en conflicto. La consulta básica (SPEC001) y la página de inicio
+(SPEC002) ya están implementadas. El vendedor necesita ahora filtrar por
+categoría y precio máximo.
+
+ENTRADA
+.specify/memory/constitution.md, la spec.md de SPEC001 y catalogo_productos.xlsx.
+
+SALIDA ESPERADA
+La spec.md de la nueva Spec, con historias de usuario, requisitos funcionales,
+reglas de negocio, criterios de aceptación y casos límite.
+
+REGLAS YA DECIDIDAS
+- Los filtros de categoría y precio máximo pueden combinarse.
+- El precio máximo incluye el valor límite.
+- La categoría usa las mismas equivalencias que la consulta básica.
+- Un producto sin precio utilizable no cumple un filtro de precio: se excluye
+  y la respuesta lo informa.
+- Un SKU con precios en conflicto se informa como establece SPEC001: no se
+  elige un precio en silencio.
+- Un precio máximo negativo es una entrada inválida y se avisa.
+
+RESTRICCIONES
+No cambies el comportamiento de SPEC001. Fuera de alcance: ordenar resultados,
+filtrar por otros atributos, exportar y modificar el catálogo.
+
+CRITERIO DE ACEPTACIÓN
+Los criterios citan SKU reales del catálogo. "Periféricos con precio máximo
+34.990" devuelve PER-4001 y PER-4002, y "Notebooks con precio máximo
+1.000.000" excluye NB-1009 informando que no tiene precio.
