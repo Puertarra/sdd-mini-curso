@@ -217,3 +217,7 @@ Implementación
 ```
 
 De esta forma, **Clarify** reduce las ambigüedades de la Especificación y **Analyze** comprueba posteriormente que esa Especificación se haya propagado correctamente hacia el Plan y las Tareas. Solo después de superar estas revisiones comienza la implementación.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

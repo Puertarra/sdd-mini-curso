@@ -13,7 +13,7 @@ Supongamos que ProductChat ya está funcionando, pero después de utilizarlo que
 1. Una página inicial que permita acceder a las principales funciones del chatbot.
 2. Una interfaz más profesional y consistente.
 
-En lugar de pedir directamente a la IA que modifique el código, comenzamos una nueva iteración.
+La segunda mejora está formulada a propósito como la diría un usuario: es vaga y no se puede verificar. La dejamos así para ver más adelante cómo Clarify y la checklist la convierten en requisitos comprobables. En lugar de pedir directamente a la IA que modifique el código, comenzamos una nueva iteración.
 
 > **Nota sobre los identificadores.** Spec Kit crea un directorio por cada especificación, numerado en el orden en que se generan. En este material llamamos `SPEC001` a la especificación inicial de ProductChat y `SPEC002` a la de esta segunda iteración. El nombre exacto del directorio depende de la versión de Spec Kit; comprueba cómo los nombra la tuya y sustituye la referencia donde corresponda.
 
@@ -99,7 +99,7 @@ Antes de planificar, ejecutamos Clarify con el prompt de `prompts/03.2-clarify.t
 /speckit-clarify
 ```
 
-Clarify permite detectar expresiones ambiguas como *"interfaz profesional"* o *"navegación clara"* y transformarlas en requisitos más concretos.
+Clarify permite detectar expresiones ambiguas como *"interfaz profesional"* o *"presentación clara"* y transformarlas en requisitos más concretos.
 
 Cuando la modificación afecta a un dominio que requiere criterios específicos, también puede utilizarse `/speckit-checklist`, una puerta de calidad adicional que genera una lista de comprobación temática —de usabilidad, seguridad, accesibilidad u otra— para revisar los nuevos requisitos antes de planificar:
 
@@ -256,3 +256,7 @@ Validación
 ```
 
 La ventaja es que ProductChat puede evolucionar sin perder la trazabilidad de **qué se pidió, por qué se modificó, cómo se decidió implementarlo y qué tareas produjeron finalmente el cambio en el código**.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

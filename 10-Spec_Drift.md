@@ -6,7 +6,7 @@ El módulo 07 terminó con una advertencia. Si aparece en la planilla una incons
 
 ## Qué papel cumple la Spec después de implementar
 
-No todos los proyectos le piden lo mismo a una especificación una vez que el código existe. La documentación de Spec Kit distingue tres enfoques:
+No todos los proyectos le piden lo mismo a una especificación una vez que el código existe. Birgitta Böckeler propuso distinguir tres enfoques, y la documentación de Spec Kit los adopta:
 
 | Enfoque | Qué pasa con la Spec | En ProductChat |
 |---|---|---|
@@ -15,6 +15,29 @@ No todos los proyectos le piden lo mismo a una especificación una vez que el c�
 | **Spec-as-source** | Es lo único que editan las personas; el código se genera desde ella | No lo usamos en el curso |
 
 Desde el módulo 08 el curso trabaja **spec-anchored**: un cambio entregado se registra en una Spec nueva que referencia a las anteriores, y el conjunto de Specs vigentes describe el comportamiento actual. Ese enfoque tiene un riesgo propio, y es justamente el drift: una Spec que se conserva como referencia solo sirve si sigue diciendo la verdad.
+
+Hay una segunda decisión, independiente de la anterior: cuando un requisito cambia, ¿dónde se escribe el cambio? La documentación de Spec Kit describe tres modos de trabajo. No son opciones de la herramienta, que funciona igual en los tres, sino convenciones que el equipo acuerda:
+
+| Modo | Dónde se escribe el cambio | Ventaja | Riesgo |
+|---|---|---|---|
+| **Flow-forward** | En una Spec nueva; las anteriores quedan intactas | Cada Spec es un registro fiel de lo que se pidió en su momento | Lo vigente queda repartido entre varias Specs |
+| **Living spec** | En la misma `spec.md`, y se regeneran el plan y las tareas | La Spec siempre describe el comportamiento completo | Se pierde el porqué de las decisiones anteriores |
+| **Flow-back** | Donde apareció el problema (código, tareas o plan), y después se reconcilian los demás artefactos | Iteración rápida | Drift silencioso entre artefactos |
+
+El curso trabaja **flow-forward**. En este módulo, SPEC004 no repite SPEC001: contiene solo el cambio y declara qué criterio de SPEC001 reemplaza. La consecuencia es que el comportamiento vigente de ProductChat no está en una sola Spec, sino en el conjunto leído en orden, y que SPEC001 sigue mostrando un CA1 que ya no rige. Para que eso no confunda a nadie, ni a un compañero ni al agente, cada Spec nueva declara explícitamente qué reemplaza, y `specs/README.md` lo resume en un índice:
+
+```text
+| Spec    | Propósito             | Estado       | Modifica      |
+|---------|-----------------------|--------------|---------------|
+| SPEC001 | Consulta del catálogo | Implementada | —             |
+| SPEC002 | Página de inicio      | Implementada | —             |
+| SPEC003 | Filtros               | Implementada | —             |
+| SPEC004 | Ocultar sin stock     | En curso     | SPEC001: CA1  |
+```
+
+En el módulo 09 ese índice era opcional. Desde que una Spec reemplaza parte de otra, es necesario. El índice dice qué Specs existen; al final del módulo generaremos además una vista con los requisitos que rigen hoy.
+
+Böckeler, B. (2025). [*Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl*](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html). martinfowler.com. · GitHub. *Spec Kit v1.0.8*, documentación: `docs/concepts/spec-persistence.md`.
 
 ## Qué es el drift, y qué no
 
@@ -266,11 +289,64 @@ git merge 004-ocultar-sin-stock
 
 El historial de la rama cuenta la historia completa: primero el parche, después la auditoría, y al final la Spec que lo corrige. Eso también es trazabilidad.
 
+## Una vista de los requisitos vigentes
+
+Con SPEC004 integrada, el modo *flow-forward* muestra su costo. Para saber qué debe hacer hoy ProductChat hay que leer cuatro Specs en orden y aplicar cada reemplazo. Un desarrollador puede hacerlo. Un Product Owner o un cliente que pregunta *"¿qué hace hoy el sistema con los productos sin stock?"* no debería tener que hacerlo.
+
+La solución no es editar SPEC001, porque eso sería cambiar de modo de trabajo, sino generar una **vista consolidada**: un documento derivado que reúne los requisitos vigentes y cita de qué Spec viene cada uno. Se genera desde `main` después de cada integración y no se edita a mano. Si dice algo incorrecto, el error está en una Spec, y se corrige ahí.
+
+```text
+ROL
+Actúa como redactor técnico de ProductChat. Consolidas requisitos ya
+decididos; no los modificas, no los interpretas ni resuelves contradicciones.
+
+CONTEXTO
+ProductChat trabaja en modo flow-forward: cada Spec de specs/ contiene solo su
+cambio y declara qué criterios de Specs anteriores reemplaza. No existe una
+vista única de lo que el producto debe hacer hoy. Esta vista la leerán personas
+que no trabajan con Spec Kit, como el Product Owner o el cliente.
+
+ENTRADA
+Las spec.md de specs/ en la rama main, en orden de numeración, y
+specs/README.md.
+
+SALIDA ESPERADA
+El archivo specs/requisitos-vigentes.md, con cuatro partes:
+1. Un encabezado con la fecha y el commit de main desde el que se generó.
+2. Los requisitos funcionales, reglas de negocio y criterios de aceptación
+   vigentes, agrupados por tema y redactados en lenguaje de negocio. Cada uno
+   cita su origen (por ejemplo, SPEC004: CA1) y, si reemplaza a otro, cuál.
+3. Los requisitos reemplazados, cada uno con la Spec que lo reemplazó.
+4. Los conflictos: puntos en que dos Specs vigentes dicen cosas distintas sin
+   que ninguna declare reemplazar a la otra.
+
+RESTRICCIONES
+Usa solo lo que dicen las Specs: no completes con el plan ni con el código. Un
+requisito está reemplazado solo si una Spec posterior lo declara; si no, ambos
+siguen vigentes y, si se contradicen, van a conflictos. No modifiques ninguna
+spec.md. El archivo es derivado: se regenera completo, no se edita a mano.
+
+CRITERIO DE ACEPTACIÓN
+Cada línea cita su Spec de origen. CA1 aparece en la versión de SPEC004
+(NB-1005, NB-1007 y NB-1012) y la de SPEC001 aparece entre los reemplazados.
+No falta ningún criterio de SPEC001, SPEC002 o SPEC003 que no haya sido
+reemplazado.
+```
+
+> Este prompt está en `prompts/10.5-vista-vigente.txt`, listo para copiar. Si lo modificas, hazlo allí: ese archivo es la versión de referencia.
+
+El resultado se comprueba con el propio caso del módulo: CA1 debe aparecer en la versión de SPEC004, y la de SPEC001, entre los reemplazados. La sección de conflictos es la más valiosa del documento. Si aparece algo ahí, hay dos Specs vigentes que dicen cosas distintas, uno de los tipos de drift del inicio del módulo, y se resuelve con una Spec nueva que declare cuál rige.
+
+```bash
+git add specs/requisitos-vigentes.md
+git commit -m "docs: regenerate current requirements view"
+```
+
 ## Cómo prevenirlo
 
 La práctica que más drift evita es aburrida: cada criterio de aceptación tiene una prueba. Si `CA5` hubiera sido una prueba, el parche habría fallado en el primer intento y el drift nunca habría llegado al historial.
 
-La segunda es auditar después de cada cambio urgente, no al final del semestre. El prompt `10.2` no depende de este caso: sirve igual para cualquier rama.
+La segunda es auditar después de cada cambio urgente, no al cierre del sprint. El prompt `10.2` no depende de este caso: sirve igual para cualquier rama.
 
 ## Actividad práctica
 
@@ -283,3 +359,8 @@ Reproduce el caso completo en tu ProductChat: crea la rama, aplica el parche con
 | Corrección | La tabla de resultados esperados se cumple completa |
 | Verificación | El segundo informe marca resuelto cada hallazgo inicial |
 | Trazabilidad | El historial muestra parche, Spec y corrección en ese orden |
+| Vista vigente | `specs/requisitos-vigentes.md` muestra CA1 en la versión de SPEC004 y no registra conflictos |
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

@@ -25,6 +25,10 @@ A diferencia de la Especificación, en el Plan sí corresponde tomar decisiones 
 
 Estas decisiones deben derivarse de necesidades reales establecidas en la Especificación y respetar siempre los principios definidos en la Constitución.
 
+> **Si vienes de Scrum.** El Plan se parece a la *Sprint Planning*, pero solo en parte. La Guía de Scrum divide esa reunión en tres temas: por qué el Sprint aporta valor, qué ítems del backlog entran y cómo se hará el trabajo. El Plan corresponde al tercero, el "cómo". En ese tema los *Developers* también descomponen los ítems en unidades de trabajo de un día o menos, que en SDD es la etapa siguiente, las Tareas; la equivalencia más exacta es Plan más Tareas. Hay dos diferencias. La Sprint Planning es un evento con límite de tiempo, en el que el equipo elige qué entra según su capacidad; en SDD ese alcance ya lo fijó la Especificación. Y Scrum no pide documentar las decisiones técnicas: el diseño surge durante el Sprint. El Plan las deja escritas antes de implementar, más cerca de los registros de decisiones de arquitectura (*Architecture Decision Records*) que propuso Michael Nygard que de Scrum. La razón es la misma que vimos en la Especificación: el agente que implementa no estuvo en la conversación del equipo.
+>
+> Nygard, M. (2011). [*Documenting Architecture Decisions*](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions). · Schwaber, K. y Sutherland, J. (2020). [*The Scrum Guide*](https://scrumguides.org/scrum-guide.html).
+
 ## El papel de la IA
 
 En SDD, el Plan puede ser elaborado principalmente por el **agente de IA**. La responsabilidad humana cambia respecto de la etapa anterior.
@@ -223,3 +227,7 @@ La separación entre las etapas queda así:
 `Tareas = qué acciones concretas debemos ejecutar`
 
 Una vez revisado y aceptado el Plan, el siguiente paso es transformarlo en **tareas pequeñas, ordenadas y verificables** mediante `/speckit-tasks`.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

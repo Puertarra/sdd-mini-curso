@@ -283,3 +283,7 @@ proyecto1
 Con este entorno preparado podemos comenzar el ciclo de Spec Driven Development:
 
 `Constitución → Especificación → Clarify → Plan → Tareas → Analyze → Implementación`
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

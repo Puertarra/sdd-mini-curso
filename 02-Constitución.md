@@ -126,3 +126,7 @@ Este documento establece las reglas que gobernarán las siguientes etapas del de
 `Constitución → Especificación → Clarify → Plan → Tareas → Analyze → Implementación`
 
 La Constitución se define inicialmente una sola vez y solo debería modificarse cuando cambien los principios fundamentales que gobiernan el proyecto.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

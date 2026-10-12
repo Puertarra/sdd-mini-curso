@@ -74,6 +74,10 @@ Una estructura sencilla y reutilizable puede contener:
 8. Fuera de alcance
 ```
 
+> **Si vienes de Scrum.** Scrum no define cómo se escriben los requisitos; las historias de usuario vienen de XP. Una buena fuente para escribirlas es un mapa de historias (*User Story Mapping*, Jeff Patton) hecho antes de especificar: ordena lo que el usuario hace de principio a fin y deja a la vista las historias que faltan. En un backlog ágil, lo que aquí son requisitos funcionales suele quedar como criterios de aceptación de cada ítem, o como ítems más pequeños que aparecen al dividir una historia durante el *refinement*. Las reglas de negocio se aplican a varias historias a la vez; en el ejemplo que sigue, la conversión de unidades de memoria afecta a tres. En un backlog esas reglas se copian en cada ítem y con el tiempo se contradicen. La práctica ágil más cercana a esta estructura es *Example Mapping*, propuesta por Matt Wynne, que ordena cada historia en reglas, ejemplos y preguntas abiertas. La diferencia de fondo está en la conversación. Ron Jeffries describió la historia de usuario con tres C: la tarjeta (*Card*), la conversación (*Conversation*) y la confirmación (*Confirmation*). La tarjeta es breve porque los detalles se acuerdan con el equipo. En SDD quien implementa es un agente que no estuvo en esa conversación, y los requisitos y las reglas son esa conversación puesta por escrito.
+>
+> Jeffries, R. (2001). [*Essential XP: Card, Conversation, Confirmation*](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/). · Patton, J. (2014). *User Story Mapping: Discover the Whole Story, Build the Right Product*. O'Reilly. · Wynne, M. (2015). [*Introducing Example Mapping*](https://cucumber.io/blog/bdd/example-mapping-introduction/).
+
 # Ejemplo: especificación de ProductChat
 
 Retomamos **ProductChat**, el chatbot interno de Distribuidora Andes. Su catálogo de productos y servicios vive en `catalogo_productos.xlsx`, una planilla mantenida a mano, con SKU duplicados, categorías inconsistentes, atributos sin unidad estable y columnas de texto libre.
@@ -92,23 +96,35 @@ El usuario principal es el **vendedor**: atiende clientes, no es técnico, y nec
 
 El **encargado de catálogo** no usa el chatbot, pero le interesa que las inconsistencias se hagan visibles en lugar de quedar disimuladas, porque eso le indica qué corregir primero en la planilla.
 
+El **cliente final** tampoco usa el chatbot: recibe la respuesta por boca del vendedor.
+
 ## 3. Historias de usuario
+
+Cada historia se escribe con la forma estándar *Como <usuario>, quiero <necesidad>, para <objetivo>*. Esa forma dice qué necesita alguien y para qué, pero no permite comprobar si se cumplió. Por eso cada historia va seguida de un **escenario**: una consulta concreta sobre el catálogo con su resultado esperado. Es la misma estructura de la plantilla de especificación de Spec Kit, donde cada *User Story* lleva sus *Acceptance Scenarios*.
 
 ### HU1 — Buscar productos
 
-El vendedor pregunta *"¿qué notebooks tienen 32 GB de RAM?"*. El chatbot devuelve los cuatro equipos que realmente cumplen, incluyendo los que declaran la memoria en otra unidad, y excluyendo los que solo la admiten como ampliación.
+Como vendedor, quiero encontrar productos por nombre, categoría o características escritas en lenguaje natural, para no depender de cómo esté escrito el dato en la planilla.
+
+*Escenario:* el vendedor pregunta *"¿qué notebooks tienen 32 GB de RAM?"*. El chatbot devuelve los cuatro equipos que realmente cumplen, incluyendo los que declaran la memoria en otra unidad, y excluyendo los que solo la admiten como ampliación.
 
 ### HU2 — Consultar los atributos de un producto
 
-El vendedor pregunta *"¿cuánta RAM tiene el Acer Swift Go?"*. El chatbot responde 32 GB, indicando el SKU de origen, aunque la planilla lo registre como `32768 MB`.
+Como vendedor, quiero pedir el precio, el stock o una característica concreta de un producto, para responderle al cliente en el momento.
+
+*Escenario:* el vendedor pregunta *"¿cuánta RAM tiene el Acer Swift Go?"*. El chatbot responde 32 GB, indicando el SKU de origen, aunque la planilla lo registre como `32768 MB`.
 
 ### HU3 — Gestionar información inexistente o insuficiente
 
-El vendedor pregunta por un producto que no está en el catálogo, o por el precio del Monitor LG UltraWide, cuya celda dice `consultar`. El chatbot informa la ausencia en lugar de completarla.
+Como vendedor, quiero que el chatbot me diga claramente cuándo no sabe, para no repetirle al cliente un dato que no existe.
+
+*Escenario:* el vendedor pregunta por un producto que no está en el catálogo, o por el precio del Monitor LG UltraWide, cuya celda dice `consultar`. El chatbot informa la ausencia en lugar de completarla.
 
 ### HU4 — Resolver un catálogo inconsistente
 
-El vendedor pregunta *"¿cuál es el precio del ThinkBook 14?"*. El SKU `NB-1001` aparece dos veces con precios distintos. El chatbot informa que existen dos precios registrados y que el catálogo está inconsistente en ese punto, **sin elegir uno**.
+Como vendedor, quiero que el chatbot entienda que `32768 MB` y `32 GB` son lo mismo y que `Portatiles` y `Notebooks` son la misma familia, y que me avise cuando el catálogo se contradice a sí mismo, para no elegir yo a ciegas entre dos precios.
+
+*Escenario:* el vendedor pregunta *"¿cuál es el precio del ThinkBook 14?"*. El SKU `NB-1001` aparece dos veces con precios distintos. El chatbot informa que existen dos precios registrados y que el catálogo está inconsistente en ese punto, **sin elegir uno**.
 
 ## 4. Requisitos funcionales
 
@@ -251,9 +267,7 @@ El flujo queda entonces:
 
 La IA puede ayudar a estructurar, revisar y formalizar una especificación, pero las decisiones fundamentales deberían proceder de quien conoce el problema y el negocio.
 
-En SDD, la persona define principalmente la **intención, las reglas de negocio, el alcance y los criterios de aceptación**. El agente puede posteriormente transformar esa información en documentos más formales, generar el Plan y convertirlo en tareas ejecutables.
-
-Por tanto, la especificación es la etapa donde debería existir una mayor participación humana:
+En SDD, la persona define principalmente la **intención, las reglas de negocio, el alcance y los criterios de aceptación**. El agente puede posteriormente transformar esa información en documentos más formales, generar el Plan y convertirlo en tareas ejecutables. Por tanto, la especificación es la etapa donde debería existir una mayor participación humana; a esto lo llamamos **Human in the Loop**, o simplemente **HITL**:
 
 `Persona: define y valida el qué`
 
@@ -320,3 +334,7 @@ A partir de esta información, Spec Kit puede generar la especificación formal 
 `Constitución → Especificación → Clarify → Plan → Tareas → Analyze → Implementación`
 
 Si durante las etapas posteriores aparece una ambigüedad sobre **qué debe hacer el producto**, la solución no debería ser improvisarla en el código. Se debe regresar a la especificación, resolver la decisión y continuar el ciclo desde una definición más precisa.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

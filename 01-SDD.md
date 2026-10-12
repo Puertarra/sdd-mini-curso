@@ -243,7 +243,7 @@ Un término por concepto, con el mismo significado en todos los módulos.
 | **Analyze** | Puerta que detecta incoherencias entre todos los artefactos. Comando: `/speckit-analyze`. |
 | **Implementación** | Ejecución de las Tareas hasta obtener código verificado. Comando: `/speckit-implement`. |
 | **Spec de servilleta** | La especificación escrita a mano por una persona, antes de usar Spec Kit. Es la entrada de `/speckit-specify`, no su salida. |
-| **Historia de usuario (HU)** | Necesidad del usuario expresada como escenario. Se identifican `HU1`, `HU2`… |
+| **Historia de usuario (HU)** | Necesidad de un usuario con la forma *Como <usuario>, quiero <necesidad>, para <objetivo>*, seguida de un escenario que la vuelve verificable. Se identifican `HU1`, `HU2`… |
 | **Historia refinada** | Subdivisión verificable de una historia de usuario. Se identifican `HU1.1`, `HU1.2`… |
 | **El catálogo** | La fuente de datos del caso: `catalogo_productos.xlsx`, hoja `Catálogo`. Único nombre para referirse a ella. |
 | **Capa de método** | Spec Kit: organiza el proceso. |
@@ -284,3 +284,7 @@ Cada prompt consume lo que produjo el anterior. Esa es la propiedad que hace que
 | 7 | `prompts/07.1-implement.txt` | `tasks.md` y los demás artefactos | código verificado |
 
 Si al llegar a un paso no existe el archivo que su prompt declara como entrada, es que algo se saltó. Esa comprobación, hecha antes de pegar el prompt, ahorra la mayoría de los problemas.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

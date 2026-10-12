@@ -1,0 +1,35 @@
+ROL
+Actúa como redactor técnico de ProductChat. Consolidas requisitos ya
+decididos; no los modificas, no los interpretas ni resuelves contradicciones.
+
+CONTEXTO
+ProductChat trabaja en modo flow-forward: cada Spec de specs/ contiene solo su
+cambio y declara qué criterios de Specs anteriores reemplaza. No existe una
+vista única de lo que el producto debe hacer hoy. Esta vista la leerán personas
+que no trabajan con Spec Kit, como el Product Owner o el cliente.
+
+ENTRADA
+Las spec.md de specs/ en la rama main, en orden de numeración, y
+specs/README.md.
+
+SALIDA ESPERADA
+El archivo specs/requisitos-vigentes.md, con cuatro partes:
+1. Un encabezado con la fecha y el commit de main desde el que se generó.
+2. Los requisitos funcionales, reglas de negocio y criterios de aceptación
+   vigentes, agrupados por tema y redactados en lenguaje de negocio. Cada uno
+   cita su origen (por ejemplo, SPEC004: CA1) y, si reemplaza a otro, cuál.
+3. Los requisitos reemplazados, cada uno con la Spec que lo reemplazó.
+4. Los conflictos: puntos en que dos Specs vigentes dicen cosas distintas sin
+   que ninguna declare reemplazar a la otra.
+
+RESTRICCIONES
+Usa solo lo que dicen las Specs: no completes con el plan ni con el código. Un
+requisito está reemplazado solo si una Spec posterior lo declara; si no, ambos
+siguen vigentes y, si se contradicen, van a conflictos. No modifiques ninguna
+spec.md. El archivo es derivado: se regenera completo, no se edita a mano.
+
+CRITERIO DE ACEPTACIÓN
+Cada línea cita su Spec de origen. CA1 aparece en la versión de SPEC004
+(NB-1005, NB-1007 y NB-1012) y la de SPEC001 aparece entre los reemplazados.
+No falta ningún criterio de SPEC001, SPEC002 o SPEC003 que no haya sido
+reemplazado.

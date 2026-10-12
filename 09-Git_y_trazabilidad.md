@@ -4,7 +4,7 @@ La primera parte terminó con ProductChat funcionando. A partir de aquí el prod
 
 En la primera parte afirmamos muchas veces que SDD es trazable, que cada parte del código se puede seguir hasta la especificación que la pidió. Sin control de versiones, esa afirmación es retórica: puedes decirla, pero no comprobarla. Git la vuelve verificable, porque guarda juntos, en el mismo commit, el requisito y el código que lo implementa.
 
-Este módulo usa Git solo en lo que SDD necesita. No es un curso de Git: bastan una rama por Spec, commits por etapa y un archivo de contexto para el agente.
+Este módulo usa Git solo en lo que SDD necesita. No es un curso de Git: bastan una rama por Spec, commits por etapa y un archivo de contexto para el agente. Si Git es nuevo para ti, o necesitas recordar un comando, el anexo [`A-Mini_manual_de_Git.md`](A-Mini_manual_de_Git.md) reúne todos los que usa el curso, con ejemplos de ProductChat.
 
 ## Qué se versiona
 
@@ -386,4 +386,10 @@ La entrega es el repositorio, con:
 | Verificación | Las tres consultas de la tabla dan el resultado esperado |
 | Trazabilidad | La tabla de la sección anterior, completada con rutas y hashes reales |
 
-Si tu proyecto acumula varias Specs, puedes agregar un `specs/README.md` con una línea por Spec: identificador, propósito y estado. Con tres Specs no hace falta.
+Si tu proyecto acumula varias Specs, puedes agregar un `specs/README.md` con una línea por Spec: identificador, propósito y estado. Con tres Specs que no se pisan entre sí no hace falta; el módulo 10 muestra cuándo se vuelve necesario.
+
+> **Para más adelante: la extensión `git` de Spec Kit.** Spec Kit 1.0.8 incluye una extensión opcional que automatiza parte de lo que en este módulo hiciste a mano. Se instala con `specify extension add git` y funciona mediante *hooks*, acciones que se ejecutan solas antes o después de cada operación: crea la rama `NNN-nombre` antes de cada `/speckit-specify` y, si la configuras, hace un commit antes o después de cada etapa. Es una funcionalidad avanzada, y conviene usarla solo cuando ya domines el flujo manual: crear la rama, decidir qué entra en cada commit y leer el historial resultante. Automatizar un proceso que todavía no entiendes produce un historial que tampoco sabrás leer. Ten en cuenta además que los mensajes automáticos, como `[Spec Kit] Add tasks`, no dicen de qué Spec son: habría que configurarlos para mantener la convención `SPEC003: …`. Y la extensión no resuelve el trabajo en paralelo del módulo 11: crea ramas, pero en una sola carpeta de trabajo.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

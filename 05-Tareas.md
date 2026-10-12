@@ -96,12 +96,13 @@ Tarea:
 Implementar la búsqueda de productos por nombre.
 
 Verificación:
-Al consultar un producto existente, el sistema devuelve
-la información correspondiente al producto almacenado
-en el catálogo.
+Al consultar "Acer Swift Go", el sistema devuelve NB-1007
+con 32 GB de RAM, aunque la planilla registre 32768 MB.
 ```
 
 Esta verificabilidad permite relacionar la implementación con los requisitos y criterios de aceptación definidos previamente en la Especificación.
+
+Para verificar no hace falta inventar datos: el propio catálogo es el conjunto de prueba. Fue construido con sus defectos a la vista, y cada criterio de aceptación tiene una fila real que lo pone a prueba. Conviene distinguir tres niveles. Las **pruebas unitarias** comprueban una regla aislada, como que `32768 MB` equivale a 32 GB o que `Portatiles` y `Notebooks` son la misma familia; usan valores escritos dentro de la propia prueba, tomados de las grafías reales de la planilla. Las **pruebas de aceptación** se ejecutan sobre `catalogo_productos.xlsx` y nombran el SKU, igual que los criterios de aceptación. Los **datos sintéticos** solo son necesarios para casos que el catálogo no contiene, como un archivo vacío o una hoja faltante; en ese caso, la planilla de prueba se declara en la Especificación o en el Plan, y no la improvisa el agente durante la implementación.
 
 ## Generación con GitHub Spec Kit
 
@@ -278,3 +279,7 @@ Donde:
 `Tasks = acciones pequeñas y verificables`
 
 Una vez generado y revisado `tasks.md`, el proyecto queda preparado para que el agente comience la **implementación progresiva de las tareas**.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

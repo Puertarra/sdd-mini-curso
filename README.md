@@ -1,11 +1,12 @@
 # Mini curso de Spec Driven Development
 
-**Andrés Leiva-Araos** · Facultad de Ingeniería, Universidad del Desarrollo
+**Andrés Leiva-Araos, Ph.D.** · 
+<br>Facultad de Ingeniería, Universidad del Desarrollo
 
 Material para un mini curso de **Spec Driven Development (SDD)** dirigido a estudiantes de pregrado de Ingeniería. El curso usa **GitHub Spec Kit** como capa de método y **Claude Code** o **Codex** como capa de agente, y tiene dos partes:
 
-- **Primera parte (módulos 00 a 08):** el ciclo completo de SDD, desde las reglas del proyecto hasta el código.
-- **Segunda parte, SDD — Tópicos avanzados (módulos 09 a 12):** lo que pasa cuando el producto ya existe y empieza a cambiar.
+- **Introducción a SDD (módulos 00 a 08):** el ciclo completo de SDD, desde las reglas del proyecto hasta el código.
+- **SDD — Tópicos avanzados (módulos 09 a 12):** lo que pasa cuando el producto ya existe y empieza a cambiar.
 
 ## El caso
 
@@ -13,11 +14,11 @@ Todo el curso trabaja sobre un único caso, que avanza módulo a módulo.
 
 **ProductChat** es un chatbot interno para **Distribuidora Andes**, una empresa que vende equipamiento informático. Su catálogo de productos y servicios vive en una planilla Excel mantenida a mano, con SKU duplicados que se contradicen, categorías escritas de trece formas distintas, atributos sin unidad estable, precios que a veces son texto y datos escondidos en columnas de observaciones. Nadie va a limpiarla antes de construir el chatbot.
 
-Ese desorden no es decorado. Es lo que obliga a que la especificación decida cosas que una especificación sobre datos limpios nunca tendría que decidir, y es el hilo que atraviesa los trece módulos. En la segunda parte, el mismo catálogo sigue produciendo los casos difíciles: un precio en el límite exacto de un filtro, un parche de stock que oculta productos disponibles, dos capacidades que interpretan distinto el mismo SKU duplicado.
+Ese desorden no es casual. Es lo que obliga a que la especificación decida cosas que una especificación sobre datos limpios nunca tendría que decidir, y es el hilo que atraviesa los trece módulos. En la segunda parte, el mismo catálogo sigue produciendo los casos difíciles: un precio en el límite exacto de un filtro, un parche de stock que oculta productos disponibles, dos capacidades que interpretan distinto el mismo SKU duplicado.
 
 ## Índice
 
-### Primera parte
+### Primera parte: Introducción a SDD
 
 | Módulo | Contenido |
 |---|---|
@@ -36,9 +37,15 @@ Ese desorden no es decorado. Es lo que obliga a que la especificación decida co
 | Módulo | Contenido |
 |---|---|
 | [`09-Git_y_trazabilidad.md`](09-Git_y_trazabilidad.md) | Control de versiones al servicio de la trazabilidad: una rama por Spec, commits por etapa y contexto para el agente |
-| [`10-Spec_Drift.md`](10-Spec_Drift.md) | Cuando el código y la Spec dejan de decir lo mismo: provocarlo, auditarlo en dos direcciones y resolverlo |
+| [`10-Spec_Drift.md`](10-Spec_Drift.md) | Cuando el código y la Spec dejan de decir lo mismo: provocarlo, auditarlo en dos direcciones y resolverlo. Cómo evolucionan las Specs y una vista de los requisitos vigentes |
 | [`11-Trabajo_en_paralelo.md`](11-Trabajo_en_paralelo.md) | Dos agentes, dos capacidades y los conflictos de significado que Git no ve |
 | [`12-Reverse_Specs.md`](12-Reverse_Specs.md) | Reconstruir la Spec de un sistema existente. Actividad final del curso |
+
+### Anexo
+
+| Archivo | Contenido |
+|---|---|
+| [`A-Mini_manual_de_Git.md`](A-Mini_manual_de_Git.md) | Los comandos de Git que usa el curso, con ejemplos de ProductChat, convenciones y cómo deshacer errores |
 
 Los módulos están pensados para leerse en orden. El `01` contiene el vocabulario y el contrato de prompt que usan todos los demás, así que conviene no saltárselo. La segunda parte parte de un ProductChat ya implementado al terminar la primera.
 
@@ -48,7 +55,7 @@ Los módulos están pensados para leerse en orden. El `01` contiene el vocabular
 |---|---|
 | [`spec_servilleta_productchat.md`](spec_servilleta_productchat.md) | La especificación escrita a mano, antes de usar ninguna herramienta. Es la entrada de `/speckit-specify`, no su salida |
 | `catalogo_productos.xlsx` | El catálogo de Distribuidora Andes, con sus defectos. Hoja `Catálogo`, cabecera en la fila 3 |
-| [`prompts/`](prompts/) | Los 33 prompts del curso, listos para copiar |
+| [`prompts/`](prompts/) | Los 34 prompts del curso, listos para copiar |
 
 Los dos primeros se copian dentro del proyecto de Spec Kit antes de empezar, porque los prompts los nombran por su ruta. Los criterios de aceptación de todo el curso citan SKU de la planilla: si se modifica, dejan de cuadrar.
 
@@ -90,6 +97,7 @@ El número de cada prompt indica el módulo donde se usa y su orden dentro de é
 | [`10.2-auditoria-drift.txt`](prompts/10.2-auditoria-drift.txt) | 10 | Auditar en dos direcciones. También verifica la resolución |
 | [`10.3-sin-stock-specify.txt`](prompts/10.3-sin-stock-specify.txt) | 10 | Formalizar la regla de stock (SPEC004) |
 | [`10.4-sin-stock-plan.txt`](prompts/10.4-sin-stock-plan.txt) | 10 | Corregir el parche desde el plan |
+| [`10.5-vista-vigente.txt`](prompts/10.5-vista-vigente.txt) | 10 | Generar la vista consolidada de los requisitos vigentes, para quien no lee las Specs |
 | [`11.1-distribucion.txt`](prompts/11.1-distribucion.txt) | 11 | Repartir el trabajo y asignar dueño a cada regla común |
 | [`11.2-exportacion-specify.txt`](prompts/11.2-exportacion-specify.txt) | 11 | Especificar la exportación a CSV (SPEC005) |
 | [`11.3-resumen-specify.txt`](prompts/11.3-resumen-specify.txt) | 11 | Especificar el resumen para correo (SPEC006) |
@@ -110,7 +118,7 @@ La segunda parte reutiliza sin cambios `03.2`, `05.1`, `06.1` y `07.1` para Clar
 
 - Un agente de código: Claude Code o Codex.
 - [uv](https://docs.astral.sh/uv/), para instalar Spec Kit.
-- Git, desde el módulo 09.
+- Git 2.28 o posterior, desde el módulo 09. El anexo `A` resume los comandos necesarios.
 - GitHub Spec Kit **v1.0.8**:
 
 ```bash

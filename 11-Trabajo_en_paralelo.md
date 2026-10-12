@@ -1,6 +1,6 @@
 # El trabajo en paralelo en SDD
 
-Hasta aquí, un agente hizo todo el trabajo, una Spec detrás de otra. Con dos capacidades independientes, la tentación natural es abrir dos sesiones y dejar que cada agente avance por su lado. Puede funcionar, pero conviene saber de antemano dónde se rompe.
+Hasta aquí, un agente hizo todo el trabajo, una Spec detrás de otra. Con dos capacidades independientes (exportar el resultado de una consulta a CSV y resumirlo en texto para un correo al cliente), la tentación natural es abrir dos sesiones y dejar que cada agente avance por su lado. Puede funcionar, pero conviene saber de antemano dónde se rompe.
 
 El riesgo principal no son los conflictos que detecta Git. Son los que Git no puede ver: dos agentes que entienden de forma distinta la misma regla del catálogo y producen resultados que se contradicen, aunque cada uno por separado pase sus pruebas. Este módulo trata de cómo evitarlo.
 
@@ -364,3 +364,7 @@ El resultado se verifica comparando las dos salidas para las mismas consultas:
 | Resolución | Las Specs consumidoras referencian la regla en lugar de redefinirla |
 | Integración | Un merge por vez, con pruebas después de cada uno |
 | Consistencia | El CSV y el resumen coinciden en las tres consultas |
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

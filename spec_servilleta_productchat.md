@@ -57,7 +57,7 @@ diez segundos, **sin que el usuario tenga que saber nada de lo anterior**.
 - **El cliente final (no usa la aplicación).** Recibe la respuesta por boca del
   vendedor. Nunca habla con el chatbot en esta versión.
 
-## 3. Escenarios de usuario
+## 3. Historias de usuario
 
 - **HU1 — Buscar productos.** Como vendedor, quiero encontrar productos por
   nombre, categoría o características escritas en lenguaje natural, para no

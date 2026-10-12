@@ -167,7 +167,19 @@ Por ejemplo:
 [P] [HU1.3] Implementar búsqueda por características.
 ```
 
-Si no existen dependencias entre ellas, distintos subagentes pueden trabajar simultáneamente sobre estas tareas.
+La marca `[P]` indica que esas tareas *pueden* ejecutarse en paralelo, no que vayan a hacerlo. Spec Kit no ejecuta nada por sí mismo: `/speckit-implement` le entrega al agente el flujo de implementación, y es el agente quien decide si delega trabajo en subagentes. Claude Code y Codex admiten subagentes, pero en ambos casos la delegación hay que pedirla explícitamente, agregando al prompt de implementación una instrucción como esta:
+
+```text
+Antes de la fase 3, revisa las tareas marcadas [P]: comprueba que no
+dependan entre sí ni modifiquen los mismos archivos, y delega en
+subagentes solo los grupos realmente independientes. Espera a que todos
+terminen, ejecuta las pruebas y comprueba los criterios de aceptación
+antes de pasar a la fase 4.
+```
+
+El agente principal sigue siendo responsable del resultado: coordina el trabajo, espera a los subagentes y verifica la integración antes de continuar. Por eso conviene delegar grupos de tareas independientes, y no crear un subagente por cada `[P]` de forma automática. La independencia se mide por archivos: la regla de Spec Kit es que las tareas que modifican los mismos archivos se ejecutan en secuencia. Las tres búsquedas del ejemplo probablemente terminen en el mismo módulo del código, y en ese caso irán una tras otra aunque estén marcadas con `[P]`.
+
+Si necesitas control completo sobre cuántos agentes trabajan y en qué, la alternativa es abrir una sesión por grupo de tareas, cada una en su propia copia del repositorio, e integrarlas después. Ese esquema se desarrolla en el módulo 11.
 
 Esto permite que `tasks.md` no sea simplemente una lista de trabajo, sino también una estructura que ayuda a coordinar la ejecución agéntica.
 
@@ -279,3 +291,7 @@ Nuevos requisitos / correcciones
 La primera implementación no tiene por qué ser definitiva. **Spec Driven Development es iterativo**: cada ciclo permite evolucionar el producto manteniendo alineados los requisitos, las decisiones técnicas, las tareas y el código.
 
 La diferencia fundamental es que la iteración no consiste simplemente en pedirle a la IA que modifique el código. Cuando cambia el producto, **actualizamos primero su especificación y propagamos el cambio de manera controlada hasta la implementación**.
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

@@ -42,6 +42,14 @@ git commit -m "Received snapshot of ProductChat (source commit abc1234)"
 
 Hay una trampa en este ejercicio, y conviene nombrarla. Tú conoces las Specs que tu compañero tenía que cumplir: son las mismas que implementaste tú. La tentación será escribir lo que el sistema *debería* hacer. Pero un reverse-spec describe lo que el código **hace**, y es precisamente en las diferencias donde aparece el valor del ejercicio.
 
+Fuera del aula, el sistema rara vez viene de un compañero que siguió el mismo curso, y la pregunta central pasa a ser qué hace de referencia. Hay dos situaciones típicas.
+
+La primera es un proyecto propio hecho con *vibe coding*: software construido pidiéndole cambios a un agente, sin escribir una especificación (el término lo acuñó Andrej Karpathy en 2025). Ahí tienes acceso a parte de la historia: tu memoria, la conversación con el agente y, si los hubo, los commits. Pero ninguna de esas fuentes es confiable por sí sola. La memoria mezcla lo que querías con lo que quedó. Los prompts registran lo que pediste, no lo que el agente hizo. Y la intención probablemente cambió a mitad de camino sin quedar anotada. El riesgo es escribir la Spec del sistema que imaginaste. La regla es la de este módulo: lo que el sistema hace lo dicen las pruebas de caracterización; tus recuerdos y tus prompts son evidencia de intención, y se registran aparte, como una entrevista.
+
+La segunda es un proyecto ajeno. Ahí la intención solo llega a través de personas o de rastros como el historial y los tickets. Si no hay a quién preguntar, el comportamiento observado es la única referencia, y cada regla queda como observada y no confirmada. El riesgo es el inverso: tomar por requisito lo que en realidad es un error, como el `NB-1009` mostrado a $0, que encontrarás más adelante en este módulo.
+
+En ninguno de los dos casos tendrás, al final, unas Specs originales contra las cuales comparar tu reconstrucción. Esa comparación es un lujo del ejercicio de clase. En la práctica, la Spec inversa se valida de otra forma: la revisa quien usa o encargó el sistema, y las pruebas de caracterización pasan sobre la versión recibida.
+
 Los documentos del reconocimiento van en una carpeta `reconocimiento/` en la raíz, no dentro de `specs/`. Spec Kit numera sus Specs según lo que encuentra en `specs/`, y no conviene mezclar en esa carpeta material que no es una Spec.
 
 ## Reconocer: del mapa al flujo
@@ -145,7 +153,7 @@ Cada regla queda marcada como **observada**, si se ejecutó, o **inferida**, si 
 
 El reconocimiento siempre encuentra comportamientos raros. La reacción natural es corregirlos. Es un error: antes hay que saber si alguien depende de ellos.
 
-Supón que en la versión recibida el precio vacío de `NB-1009` aparece como $0. Parece un defecto, y probablemente lo es. Pero si los vendedores aprendieron a ignorar los productos en $0, "corregirlo" cambia lo que ven todos los días sin que nadie lo haya pedido. La anomalía se registra, se pregunta, y recién después se decide.
+Supón que en la versión recibida el precio vacío de `NB-1009` aparece como \$0. Parece un defecto, y probablemente lo es. Pero si los vendedores aprendieron a ignorar los productos en \$0, "corregirlo" cambia lo que ven todos los días sin que nadie lo haya pedido. La anomalía se registra, se pregunta, y recién después se decide.
 
 | Clasificación | Qué se hace en esta fase |
 |---|---|
@@ -413,3 +421,7 @@ Al terminar, y solo entonces, compara tu reconstrucción con las Specs originale
 | Caracterización | Las pruebas pasan sobre la versión recibida y cada una referencia su regla o anomalía |
 | Entrega | El Spec Pack enlaza todo y declara qué quedó sin verificar |
 | Comparación | Un párrafo final con las diferencias entre tu reconstrucción y las Specs originales |
+
+---
+
+© 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)
