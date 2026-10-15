@@ -1,0 +1,41 @@
+/speckit-plan
+
+ROLE
+Act as a software architect. Propose the how and justify it; the final
+decision is mine.
+
+CONTEXT
+ProductChat is a first version that must be easy to deploy and maintain.
+The data source is product_catalog.xlsx, a spreadsheet with duplicate SKUs,
+inconsistent categories, attributes without a stable unit and prices stored as
+text. The spreadsheet is neither corrected nor replaced.
+
+INPUT
+spec.md, .specify/memory/constitution.md and the product_catalog.xlsx file
+itself, which you can inspect to learn the real shape of the data.
+
+EXPECTED OUTPUT
+plan.md with the architecture, the stack and the project structure;
+data-model.md explicitly distinguishing the raw shape of the spreadsheet from
+the normalized internal model, and describing the transformation between them;
+research.md justifying the decisions with alternatives.
+
+DECISIONS YOU MUST RESOLVE EXPLICITLY
+Where normalization is applied, at load time or on each query. When the Excel
+file is read. How a missing value is represented versus a zero and versus a
+text such as "ask". How a SKU with two conflicting values is represented
+without collapsing them. And which part of the work the language model does and
+which part is deterministic code.
+
+CONSTRAINTS
+Prioritize simplicity as the Constitution requires. Do not add infrastructure
+that the specification does not need. Do not propose generating a clean copy of
+the spreadsheet or deduplicating silently: both contradict the Constitution.
+Explain every relevant decision also in terms a non-technical person can
+understand.
+
+ACCEPTANCE CRITERION
+The data model can hold two different values for the same SKU. The
+interpretation of units is deterministic and does not depend on the language
+model. Every component that adds complexity is justified by a specific
+requirement in spec.md.

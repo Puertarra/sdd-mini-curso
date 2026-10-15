@@ -1,0 +1,8 @@
+CONTROLLED EXERCISE. This prompt deliberately does not follow the course
+contract: it is an urgent request like the ones that produce Spec Drift. Use it
+only on the practice branch.
+
+Urgent: salespeople are offering products we don't have. Modify the ProductChat
+code directly so that it does not show any product whose stock is not a number
+greater than zero. Don't touch the Specs, the plan, or the tasks; we'll add the
+tests later.

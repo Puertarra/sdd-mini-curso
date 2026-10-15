@@ -1,0 +1,25 @@
+ROLE
+Act as the person responsible for the handover. You assemble what exists;
+you do not add new evidence.
+
+CONTEXT
+The discovery of ProductChat is finished. You need to hand someone else
+everything they need to understand the system and change it safely.
+
+INPUT
+The files in discovery/, the reverse spec in specs/ and
+tests/test_characterization.py.
+
+EXPECTED OUTPUT
+SPEC-PACK.md at the root, with: the version studied and the scope; a
+one-page summary for a non-technical reader; an index with links to each
+document, the Spec and the tests; a BR → A → test traceability table; the
+commands to run the tests; and what was left unverified.
+
+CONSTRAINTS
+Link only files that exist. Do not declare the system fully documented if
+the scope does not support it.
+
+ACCEPTANCE CRITERION
+All links open, the test commands run, and SPEC-PACK.md explicitly states
+what was left out of scope or unverified.

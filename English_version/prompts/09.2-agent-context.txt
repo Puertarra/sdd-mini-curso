@@ -1,0 +1,27 @@
+ROLE
+Act as the technical maintainer of ProductChat. You document how work is done in
+the repository; you do not change the system's behavior.
+
+CONTEXT
+ProductChat has a Constitution, specifications and plans, but the agent
+starts each session without knowing how the code is organized or how it is
+tested. That information lives in a context file: CLAUDE.md in Claude Code,
+AGENTS.md in Codex.
+
+INPUT
+.specify/memory/constitution.md, the plan.md files in specs/ and the project's
+code.
+
+EXPECTED OUTPUT
+CLAUDE.md (or AGENTS.md) at the root, one page at most, with: the system's
+purpose in two lines, the current stack, how the code is organized, where the
+catalog is normalized, verified commands to run and test, and the branch and
+commit convention per Spec.
+
+CONSTRAINTS
+Reference the Constitution and the specs/ folder; do not copy their content. If
+you could not verify a command, mark it as unverified. Do not make up data.
+
+ACCEPTANCE CRITERION
+Every command in the file runs without errors in the project, and the file does
+not repeat any rule that is already in the Constitution.

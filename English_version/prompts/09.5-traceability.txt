@@ -1,0 +1,23 @@
+ROLE
+Act as a traceability auditor. You review; you do not modify files.
+
+CONTEXT
+SPEC003 is implemented and merged into main. You need to show that a specific
+requirement can be followed from the specification to a test and a commit.
+
+INPUT
+The SPEC003 folder in specs/ (spec.md, plan.md, tasks.md), the code, the
+tests and the Git history.
+
+EXPECTED OUTPUT
+A table for the requirement "the maximum price includes the limit value" with
+five rows: requirement, plan decision, task, test and commit, each with its
+real path, name or hash.
+
+CONSTRAINTS
+Cite only paths, test names and hashes that exist. If a link is missing, mark
+it as missing instead of assuming it.
+
+ACCEPTANCE CRITERION
+I can open every path and run git show with every hash, and the cited test
+verifies that PER-4001, priced at 34.99, appears with a maximum price of 34.99.

@@ -1,0 +1,26 @@
+ROLE
+Act as the coordinator of a team of two agents. You distribute work and
+assign owners; you do not modify files.
+
+CONTEXT
+ProductChat is adding two capabilities that consume the same query result:
+exporting it to CSV (SPEC005) and summarizing it as text for an email to the
+customer (SPEC006). That result already applies rules defined in other Specs:
+price conflicts and duplicates (SPEC001), filters (SPEC003) and stock
+(SPEC004). The two capabilities will be implemented by different agents.
+
+INPUT
+The Specs in specs/, the code, the tests and CLAUDE.md.
+
+EXPECTED OUTPUT
+Two tables. The first, of common rules: each rule that both capabilities
+consume and the single Spec that owns that rule. The second, of work: Spec,
+owning agent, branch, own files, shared files with their single owner,
+dependencies and required tests.
+
+CONSTRAINTS
+Distinguish between reading a Spec and having its code available. If a common
+component needs changes, assign it to a single agent.
+
+ACCEPTANCE CRITERION
+Each common rule has exactly one owning Spec, and no file has two owners.

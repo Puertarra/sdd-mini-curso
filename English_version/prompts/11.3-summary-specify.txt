@@ -1,0 +1,32 @@
+/speckit-specify
+
+ROLE
+Act as a requirements analyst. You specify a capability that consumes rules
+already defined; you do not redefine them.
+
+CONTEXT
+The salesperson replies to customers by email and today copies by hand the
+data ProductChat gives them. They want a text summary of a query result,
+ready to paste. The result already applies the rules of SPEC001 (price
+conflicts and duplicates), SPEC003 (filters) and SPEC004 (stock).
+
+INPUT
+The spec.md files of SPEC001, SPEC003 and SPEC004, and product_catalog.xlsx.
+
+EXPECTED OUTPUT
+The spec.md of SPEC006, in the directory specs/006-email-summary (use it as
+SPECIFY_FEATURE_DIRECTORY): plain text with one line per product in the
+result, with name, SKU, price and availability, plus any applicable
+warnings.
+
+CONSTRAINTS
+Summarize exactly the result shown: do not query the catalog again or select
+products again. If a rule from the earlier Specs is not enough to decide how
+to present a case, record it as an open question; do not invent a new rule.
+Out of scope: sending the email, writing the full message and modifying the
+catalog.
+
+ACCEPTANCE CRITERION
+The Spec defines how NB-1001, with two conflicting prices, and MON-3001 and
+MON-3004, which are the same monitor under two SKUs, appear, citing the
+source rule of each case.

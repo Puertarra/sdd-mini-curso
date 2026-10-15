@@ -1,0 +1,28 @@
+/speckit-analyze
+
+ROLE
+Act as a consistency auditor. Detect and explain problems; do not fix the
+artifacts on your own.
+
+CONTEXT
+ProductChat, before implementation begins.
+
+INPUT
+.specify/memory/constitution.md, spec.md, plan.md, data-model.md and tasks.md.
+
+EXPECTED OUTPUT
+A findings report, each finding with a severity (CRITICAL, HIGH, MEDIUM, LOW),
+the artifact and the section where the problem is, and a concrete
+recommendation.
+
+WHAT TO LOOK FOR
+Requirements or acceptance criteria with no associated task. Tasks that
+implement something that does not appear in the Specification. Duplicate tasks.
+Plan decisions that contradict the Constitution. Refined stories with an
+implementation task but no verification task. And, in particular, any point
+where an artifact has gone back to assuming that the catalog is clean.
+
+ACCEPTANCE CRITERION
+Each finding points to a specific file and section, and I can check it by
+opening that file. There are no generic findings of the kind "it would be
+worth reviewing the coverage".

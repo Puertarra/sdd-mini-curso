@@ -1,0 +1,48 @@
+/speckit-constitution
+
+ROLE
+Act as the person responsible for defining the permanent rules of a software
+project. You are not the architect or the programmer: you do not choose
+technologies.
+
+CONTEXT
+ProductChat is an internal chatbot for Distribuidora Andes that lets users
+query the company's catalog of products and services in natural language. The
+catalog lives in product_catalog.xlsx, a hand-maintained spreadsheet with
+duplicate SKUs, categories written in several ways, attributes without a
+consistent unit, prices stored as text and free-text columns. The spreadsheet
+will not be cleaned before the chatbot is built.
+
+INPUT
+The eight principles listed below. There is no previous artifact: this is the
+first stage of the cycle.
+
+EXPECTED OUTPUT
+The project's Constitution file, usually
+.specify/memory/constitution.md, short, actionable and in plain language.
+No decisions about languages, frameworks, AI models, architecture or specific
+technologies.
+
+PRINCIPLES
+1. Simplicity first: given two solutions, always the simpler one. This is a
+   version 1; no anticipated complexity.
+2. The catalog is the source of truth, with all its defects: answers must be
+   traceable to a specific row of the file. Do not invent products, prices,
+   attributes or availability.
+3. Inconsistency is shown, not hidden: when the catalog contradicts itself,
+   the chatbot reports it instead of silently choosing a value.
+4. The chatbot reads, it does not correct: it never modifies the source file.
+   Normalization happens when the data is interpreted, not when it is written.
+5. Zero phantom scope: do not implement any functionality that is not written
+   in the Specification. If a new idea comes up, it is proposed, not built.
+6. Verifiable by a non-technical person: every success criterion must be
+   checkable by using the application and opening the spreadsheet, without
+   reading code.
+7. Explicit uncertainty: when the data does not allow an answer, say so
+   clearly instead of guessing.
+8. Respect for data: ask only for what is strictly necessary. Do not put
+   absolute paths, credentials or secrets in the code.
+
+ACCEPTANCE CRITERION
+The resulting Constitution fits on one page, contains the eight principles
+without adding others, and none of them mentions a specific technology.

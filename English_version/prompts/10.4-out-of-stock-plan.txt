@@ -1,0 +1,26 @@
+/speckit-plan
+
+ROLE
+Act as an architect working on code that already contains a faulty version of
+this rule. You propose the how; the final decision is mine.
+
+CONTEXT
+The branch already has a patch that hides products based on their stock. It
+does not need to be redone, but fixed: the three-state stock normalization
+that SPEC001 defined already exists, and it is the one to use.
+
+INPUT
+The spec.md of SPEC004, the plan.md and data-model.md of SPEC001, the audit
+report, and CLAUDE.md.
+
+EXPECTED OUTPUT
+The plan.md of SPEC004, which reuses the existing stack and normalization,
+describes only the adjustments to the patch, and defines the tests with the
+SKUs from the acceptance criteria.
+
+CONSTRAINTS
+Do not replace the stack or the data model. Do not duplicate the stock
+normalization in another component.
+
+ACCEPTANCE CRITERION
+For each audit finding, the plan states which change resolves it.

@@ -1,0 +1,38 @@
+/speckit-specify
+
+ROLE
+Act as a requirements analyst. You specify a new ProductChat capability; you do
+not design or implement it.
+
+CONTEXT
+ProductChat queries product_catalog.xlsx, a catalog with categories written
+in several ways, prices stored as text or left empty, and duplicate SKUs with
+conflicting prices. The basic query (SPEC001) and the home page (SPEC002) are
+already implemented. The salesperson now needs to filter by category and
+maximum price.
+
+INPUT
+.specify/memory/constitution.md, the spec.md of SPEC001 and product_catalog.xlsx.
+
+EXPECTED OUTPUT
+The spec.md of the new Spec, with user stories, functional requirements,
+business rules, acceptance criteria and edge cases.
+
+RULES ALREADY DECIDED
+- The category and maximum price filters can be combined.
+- The maximum price includes the limit value.
+- The category uses the same equivalences as the basic query.
+- A product without a usable price does not meet a price filter: it is excluded
+  and the response says so.
+- A SKU with conflicting prices is reported as SPEC001 establishes: no price is
+  chosen silently.
+- A negative maximum price is invalid input, and the user is warned.
+
+CONSTRAINTS
+Do not change the behavior of SPEC001. Out of scope: sorting results,
+filtering by other attributes, exporting, and modifying the catalog.
+
+ACCEPTANCE CRITERION
+The criteria cite real SKUs from the catalog. "Peripherals with a maximum price
+of 34.99" returns PER-4001 and PER-4002, and "Notebooks with a maximum price
+of 1,000" excludes NB-1009, reporting that it has no price.

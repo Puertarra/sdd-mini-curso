@@ -1,0 +1,26 @@
+ROLE
+Act as a requirements analyst working on a Spec that is still in development.
+You refine a requirement; you do not expand the scope.
+
+CONTEXT
+During the implementation of SPEC003 a case came up that the Spec does not
+resolve: NB-1001 has two conflicting prices, 899.99 and 949.99, and with a
+maximum price of 920 one meets the filter and the other does not. The
+decision has already been made: the product appears, with the conflict warning
+and an indication of which of its prices meets the filter.
+
+INPUT
+The spec.md, plan.md and tasks.md of SPEC003.
+
+EXPECTED OUTPUT
+spec.md updated with that rule and its acceptance criterion, plus a list of the
+changes it requires in plan.md, tasks.md and the tests, separating what is
+already done from what is pending.
+
+CONSTRAINTS
+Keep the identifier and the folder: do not create a new Spec. Do not delete
+current plan decisions or tasks already completed.
+
+ACCEPTANCE CRITERION
+The diff only touches the SPEC003 folder, and spec.md contains a verifiable
+criterion with NB-1001 and a maximum price of 920.

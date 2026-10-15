@@ -1,0 +1,28 @@
+ROLE
+Act as the integration coordinator. You integrate branches that are already
+verified, one at a time; you do not expand the scope of any of them.
+
+CONTEXT
+SPEC005 and SPEC006 are implemented on their branches, each with its tests
+passing. They need to be brought into main without breaking what already
+works.
+
+INPUT
+The branches of SPEC005 and SPEC006, the distribution table and each
+agent's test reports.
+
+EXPECTED OUTPUT
+An integration order justified by dependencies and risk, the integration
+branch by branch with the tests run after each merge, and a report with
+commits, resolved conflicts and pending items.
+
+CONSTRAINTS
+Confirm that main is clean before you start. Do not integrate the second
+branch until the first one passes the tests. If a conflict appears, resolve
+it according to the Specs; do not pick one branch's version wholesale or
+delete tests to make them pass.
+
+ACCEPTANCE CRITERION
+On main, the query "Notebooks with a maximum price of 1,000" produces
+the same result in the CSV and in the summary: NB-1001 with its two prices
+and the conflict warning, and NB-1015.

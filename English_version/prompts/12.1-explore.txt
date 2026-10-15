@@ -1,0 +1,29 @@
+ROLE
+Act as an engineer who receives a system with no documentation. You observe
+and describe; you do not modify code or data.
+
+CONTEXT
+You received a copy of ProductChat built by someone else, without specs/ and
+without the napkin spec. You know it is a chatbot that queries
+product_catalog.xlsx, but you do not know which rules it implements. The
+first commit in the repository is the received version.
+
+INPUT
+The code, the existing tests, CLAUDE.md if it exists, and
+product_catalog.xlsx.
+
+EXPECTED OUTPUT
+Two files in discovery/: map.md, with the modules, their responsibility in
+business language, the entry point and the verified commands to run and
+test; and query-flow.md, with the path of the query "Peripherals with a
+maximum price of 34.99" from the question to the answer, showing in which
+function the data is read, normalized and filtered, and the answer produced.
+
+CONSTRAINTS
+Every claim cites its source: path and lines, or a run with its input and
+its output. Distinguish what you ran from what you only read. Do not fix
+anything that looks like an error: note it.
+
+ACCEPTANCE CRITERION
+Someone else can follow query-flow.md by opening the paths it cites and
+reach the same answer by running the query.

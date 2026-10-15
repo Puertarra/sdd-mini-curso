@@ -1,0 +1,28 @@
+ROLE
+Act as a test developer. You pin down the current behavior; you do not fix
+it or judge it.
+
+CONTEXT
+Before changing ProductChat, you need to protect what it does today,
+including its odd behaviors. A characterization test records the output the
+received version produces for a known input.
+
+INPUT
+discovery/rules.md, discovery/anomalies.md, the code and
+product_catalog.xlsx.
+
+EXPECTED OUTPUT
+tests/test_characterization.py with one test for each BR rule and each
+executable A anomaly, using the system's real entry point and the real
+catalog. Each test states in its docstring the rule or anomaly it protects.
+
+CONSTRAINTS
+Expected values come from running the received version: do not compute them
+inside the test or reproduce the algorithm. If the chatbot's answer
+includes generated text, compare only the stable data (SKUs, prices,
+warnings), not the full text. Use the existing runner and do not change
+production code.
+
+ACCEPTANCE CRITERION
+All tests pass on the received version, and none would pass if the behavior
+it protects changed.

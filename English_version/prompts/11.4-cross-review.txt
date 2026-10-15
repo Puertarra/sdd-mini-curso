@@ -1,0 +1,31 @@
+ROLE
+Act as a consistency reviewer across Specs. You detect conflicts; you do not
+edit documents or decide how to resolve them.
+
+CONTEXT
+SPEC005 (CSV export) and SPEC006 (email summary) were written separately
+and consume the same query result. The rules that result applies belong to
+SPEC001, SPEC003 and SPEC004.
+
+INPUT
+The spec.md files of SPEC005 and SPEC006, read from their branches with
+git show BRANCH:PATH, and the spec.md files of SPEC001, SPEC003 and SPEC004
+on main. Record the commit of each branch you review.
+
+EXPECTED OUTPUT
+A table of findings with: concept, what each consuming Spec says, what the
+Spec that owns the rule says, the SKU that reproduces it and a proposed
+resolution.
+
+WHAT TO LOOK FOR
+Rules redefined in a consuming Spec. Cases that one Spec handles and the
+other does not. In particular: conflicting prices, empty stock, services and
+products duplicated under two SKUs.
+
+CONSTRAINTS
+Do not switch branches or edit files. Distinguish a confirmed conflict from
+a risk that cannot be confirmed yet.
+
+ACCEPTANCE CRITERION
+Each finding is reproduced with a SKU from the catalog, and the proposed
+resolution points to the Spec that must change.

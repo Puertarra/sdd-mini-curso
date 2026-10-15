@@ -1,0 +1,26 @@
+/speckit-plan
+
+ROLE
+Act as the architect of a single capability within a team. You plan your
+Spec; you do not touch the other agent's work.
+
+CONTEXT
+You work on the branch and in the folder the coordinator assigned to you.
+Your capability consumes the query result that ProductChat already builds.
+
+INPUT
+Your Spec's spec.md, as revised after the cross-review, the coordinator's
+distribution table, the plan.md of SPEC001 and CLAUDE.md.
+
+EXPECTED OUTPUT
+Your Spec's plan.md, which reuses the existing stack and query result, lists
+the files you will create or modify and defines the tests with the SKUs from
+your acceptance criteria.
+
+CONSTRAINTS
+Modify only the files the table assigns to you. If you need to change a
+shared component, inform the coordinator instead of doing it. Do not
+reimplement product selection.
+
+ACCEPTANCE CRITERION
+Every file in the plan is in your column of the distribution table.

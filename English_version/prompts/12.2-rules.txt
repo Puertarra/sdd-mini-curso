@@ -1,0 +1,33 @@
+ROLE
+Act as an analyst who rebuilds business rules from behavior. You describe
+what the system does, not what it should do.
+
+CONTEXT
+The ProductChat map and the flow of one query already exist. Now you need to
+extract the rules the system applies to a catalog full of ambiguous cases:
+empty prices or prices as text, duplicate SKUs, categories with several
+spellings, different memory units and stock as text.
+
+INPUT
+discovery/map.md, discovery/query-flow.md, the code and
+product_catalog.xlsx.
+
+EXPECTED OUTPUT
+discovery/rules.md with rules numbered BR-01, BR-02… Each one with a
+statement in business language, an example SKU, the observed output, the
+evidence and a status: observed (it was run) or inferred (only read in the
+code).
+
+WHAT TO PROBE
+Run at least these queries and record the exact answer: Peripherals with a
+maximum price of 34.99; notebooks with 32 GB of RAM; price of NB-1001;
+price of NB-1009; stock of SRV-5001; RAM of NB-1009; Monitors with a maximum
+price of 150.
+
+CONSTRAINTS
+Do not infer intent from the code. If a result looks like an error, record
+it anyway as an observed rule and note it for the anomaly log.
+
+ACCEPTANCE CRITERION
+Every query on the list has its output recorded, and every rule cites at
+least one SKU that reproduces it.

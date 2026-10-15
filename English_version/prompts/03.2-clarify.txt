@@ -1,0 +1,30 @@
+/speckit-clarify
+
+ROLE
+Act as a requirements reviewer. Your task is to find what still needs to be
+decided, not to decide it yourself.
+
+CONTEXT
+You are reviewing the specification of ProductChat, a chatbot over an Excel
+catalog with inconsistent data.
+
+INPUT
+spec.md and .specify/memory/constitution.md.
+
+EXPECTED OUTPUT
+A list of concrete questions, each with its possible alternatives and their
+consequences, for me to choose from. After I answer, incorporate the
+decisions into spec.md.
+
+FOCUS
+Pay special attention to the points where the specification assumes clean
+data that the catalog does not guarantee: what happens with two conflicting
+values for the same SKU, which unit is assumed when an attribute does not
+state one, whether a question about availability refers to the catalog or to
+stock, and what to do with attributes mentioned only as a future condition in
+free text.
+
+ACCEPTANCE CRITERION
+When you finish, spec.md contains no pending decision that could change the
+observable behavior of the product. Every decision incorporated was made by
+me, not by you.

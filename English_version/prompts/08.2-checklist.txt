@@ -1,0 +1,18 @@
+/speckit-checklist
+
+ROLE
+Act as a reviewer specializing in [UX / security / accessibility / other].
+
+CONTEXT
+[Which part of ProductChat is being reviewed and why.]
+
+INPUT
+spec.md, in particular the requirements added in this iteration.
+
+EXPECTED OUTPUT
+A [domain] checklist, where each item is answered with yes or no by using the
+application.
+
+ACCEPTANCE CRITERION
+No item on the list requires reading code to be answered, and none is
+subjective: "the interface looks professional" is not a valid item.

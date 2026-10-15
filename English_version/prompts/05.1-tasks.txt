@@ -1,0 +1,26 @@
+/speckit-tasks
+
+ROLE
+Act as the person responsible for work planning.
+
+CONTEXT
+ProductChat, a chatbot over an inconsistent Excel catalog.
+
+INPUT
+plan.md, data-model.md, spec.md and .specify/memory/constitution.md.
+
+EXPECTED OUTPUT
+tasks.md with the tasks organized by phases, each task small enough to be
+implemented and checked independently. Mark with [P] the tasks that can run in
+parallel. Label each feature task with the refined story it implements, in the
+format [US1.1].
+
+OUTPUT REQUIREMENTS
+Every refined story must have at least one implementation task and one
+verification task. Verification tasks must be checkable against
+product_catalog.xlsx, naming the specific SKU when applicable. Do not introduce
+any task that implements something that is not in spec.md.
+
+ACCEPTANCE CRITERION
+Every functional requirement and every acceptance criterion in spec.md has at
+least one associated task, and no task lacks a requirement that originates it.

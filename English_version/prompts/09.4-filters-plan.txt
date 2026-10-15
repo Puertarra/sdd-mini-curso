@@ -1,0 +1,28 @@
+/speckit-plan
+
+ROLE
+Act as an architect working on a codebase that already works. You propose the
+how of SPEC003; the final decision is mine.
+
+CONTEXT
+ProductChat already normalizes categories, prices and SKU conflicts when it
+reads the catalog. The filters must be applied to that normalized catalog, not
+redo the normalization.
+
+INPUT
+The spec.md of SPEC003, the plan.md and data-model.md of SPEC001,
+.specify/memory/constitution.md and CLAUDE.md.
+
+EXPECTED OUTPUT
+The plan.md of SPEC003, reusing the stack and data model of SPEC001 and
+describing only what changes: where the filters are applied, how a missing
+price is handled and how a SKU in conflict is handled against a maximum price.
+
+CONSTRAINTS
+Do not replace the stack or the data model. If any command or convention
+changes, include a task to update CLAUDE.md, recording only what will be
+useful to future Specs.
+
+ACCEPTANCE CRITERION
+The plan lists the components it does not touch, and every new component is
+justified by a requirement of SPEC003.

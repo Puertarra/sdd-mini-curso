@@ -1,0 +1,26 @@
+/speckit-plan
+
+ROLE
+Act as an architect working on an existing codebase.
+
+CONTEXT
+This feature modifies [AFFECTED AREA] of an application that already works.
+
+INPUT
+The new specification, plus [PATH TO THE PREVIOUS PLAN] and [PATH TO THE
+PREVIOUS DATA MODEL], from which you must take the technology stack, the
+conventions, the data model, and the project structure.
+
+EXPECTED OUTPUT
+A plan that reuses the existing technical decisions and describes only what
+changes.
+
+CONSTRAINTS
+Do not replace or redesign the stack, the conventions, or the data model unless
+the new requirements make it essential. Limit the changes to what the new
+specification asks for.
+
+ACCEPTANCE CRITERION
+The plan explicitly lists which parts of the system it does not touch. No
+component that already worked appears redesigned without a written
+justification.

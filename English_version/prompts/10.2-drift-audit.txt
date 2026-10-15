@@ -1,0 +1,35 @@
+ROLE
+Act as the consistency auditor for ProductChat. You detect and explain
+divergences; you do not modify files or decide which behavior is correct.
+
+CONTEXT
+ProductChat has several current Specs in specs/. There may be code that
+changed without its requirements changing, or requirements that changed
+without the code changing. The catalog, product_catalog.xlsx, is the reference
+for reproducing each behavior with concrete SKUs.
+
+INPUT
+.specify/memory/constitution.md, the Specs in specs/ with their plans and
+tasks, the code, the tests, CLAUDE.md, the history of the current branch (git
+log and git diff main...HEAD) and, if it exists, the report of a previous
+audit.
+
+EXPECTED OUTPUT
+A report with findings numbered D-01, D-02… Each one states its direction
+(Spec → code or code → Spec), severity, affected requirement, observed
+behavior, the SKU that reproduces it, evidence with paths and lines, and
+impact. If there is a previous report, add the status of each previous
+finding: resolved, pending, or not verifiable.
+
+WHAT TO LOOK FOR
+Spec → code: requirements and acceptance criteria that the code no longer
+meets. Code → Spec: implemented product rules that no Spec backs. Pay special
+attention to stock, prices, categories, and SKU conflicts.
+
+CONSTRAINTS
+Distinguish what you executed from what you only read in the code. If you
+cannot determine which requirement is current, record it as an ambiguity.
+
+ACCEPTANCE CRITERION
+Each finding is reproduced with the SKU it cites, and none is generic, along
+the lines of "it would be worth reviewing coverage".

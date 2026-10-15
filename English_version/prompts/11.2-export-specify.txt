@@ -1,0 +1,30 @@
+/speckit-specify
+
+ROLE
+Act as a requirements analyst. You specify a capability that consumes rules
+already defined; you do not redefine them.
+
+CONTEXT
+The salesperson wants to download the result of a ProductChat query as CSV
+to work on it in a spreadsheet. The result already applies the rules of
+SPEC001 (price conflicts and duplicates), SPEC003 (filters) and SPEC004
+(stock).
+
+INPUT
+The spec.md files of SPEC001, SPEC003 and SPEC004, and product_catalog.xlsx.
+
+EXPECTED OUTPUT
+The spec.md of SPEC005, in the directory specs/005-csv-export (use it as
+SPECIFY_FEATURE_DIRECTORY): a CSV with one row per product in the result and
+the columns SKU, name, category, price, stock status and warning.
+
+CONSTRAINTS
+Export exactly the result shown: do not query the catalog again or select
+products again. If a rule from the earlier Specs is not enough to decide how
+to export a case, record it as an open question; do not invent a new rule.
+An empty result generates no file, and the user is notified.
+Out of scope: other formats, sending the file and modifying the catalog.
+
+ACCEPTANCE CRITERION
+The Spec defines how NB-1001, with two conflicting prices, and SRV-5001,
+whose stock does not apply, are exported, citing the source rule of each case.

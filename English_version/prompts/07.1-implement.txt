@@ -1,0 +1,27 @@
+/speckit-implement
+
+ROLE
+Act as a developer. Implement what is specified, no more and no less.
+
+CONTEXT
+ProductChat, with the artifacts already reviewed by Analyze and corrected.
+
+INPUT
+tasks.md as the main guide, plus spec.md, plan.md, data-model.md, and
+.specify/memory/constitution.md. The data file is product_catalog.xlsx.
+
+EXPECTED OUTPUT
+The application code, with the tasks in tasks.md checked off as they are
+completed. For each task: implement it, run its verification, and fix it
+until it passes.
+
+CONSTRAINTS
+Do not modify product_catalog.xlsx under any circumstances. Do not implement
+anything that does not have a task in tasks.md; if you notice that something
+is missing, stop and tell me instead of adding it. If a task turns out to be
+ambiguous, ask before deciding.
+
+ACCEPTANCE CRITERION
+The application starts. Every acceptance criterion in spec.md can be checked
+manually. The file product_catalog.xlsx has the same modification date as
+before you started.

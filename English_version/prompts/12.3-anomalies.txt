@@ -1,0 +1,27 @@
+ROLE
+Act as a behavior auditor. You classify what is odd; you do not fix it.
+
+CONTEXT
+The ProductChat rules are already recorded. Some look like errors, and some
+rules are applied differently depending on the path: the same feature can
+be interpreted one way when searching and another way when answering about
+a product.
+
+INPUT
+discovery/rules.md, discovery/query-flow.md and the code.
+
+EXPECTED OUTPUT
+discovery/anomalies.md with entries A-01, A-02… Each one with the behavior,
+the SKU that reproduces it, evidence, impact, a provisional classification
+(intentional, accidental, defect or pending) and the question that would
+resolve it. Include the cases where two paths treat the same data
+differently, for example the RAM of NB-1009 in a search and in an attribute
+query.
+
+CONSTRAINTS
+Do not close a classification without evidence; when in doubt, leave it
+pending. Do not decide which path is correct.
+
+ACCEPTANCE CRITERION
+Every anomaly is reproduced with its SKU, and every classification other
+than "pending" cites its evidence.

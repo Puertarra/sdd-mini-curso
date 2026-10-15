@@ -3,6 +3,8 @@
 **Andrés Leiva-Araos, Ph.D.** · 
 <br>Facultad de Ingeniería, Universidad del Desarrollo
 
+English version: [`English_version/README.md`](English_version/README.md)
+
 Material para un mini curso de **Spec Driven Development (SDD)** dirigido a estudiantes de pregrado de Ingeniería. El curso usa **GitHub Spec Kit** como capa de método y **Claude Code** o **Codex** como capa de agente, y tiene dos partes:
 
 - **Introducción a SDD (módulos 00 a 08):** el ciclo completo de SDD, desde las reglas del proyecto hasta el código.

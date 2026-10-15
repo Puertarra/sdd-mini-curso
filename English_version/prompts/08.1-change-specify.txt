@@ -1,0 +1,29 @@
+/speckit-specify
+
+ROLE
+Act as a requirements analyst working on a product that is already implemented.
+
+CONTEXT
+[PRODUCT NAME] is working. I want to add changes without breaking what is
+already there.
+
+INPUT
+The existing specification, [PATH TO THE PREVIOUS SPEC].
+
+REQUESTED CHANGES
+1. [CHANGE 1]
+2. [CHANGE 2]
+3. [CHANGE N]
+
+EXPECTED OUTPUT
+A new, separate specification that describes only these changes and
+explicitly states which existing behavior remains intact.
+
+CONSTRAINTS
+Keep unchanged any existing behavior that is not explicitly affected by these
+requirements. Do not rewrite the previous specification.
+
+ACCEPTANCE CRITERION
+The new specification can be read alongside the previous one without
+contradicting it, and its acceptance criteria can be verified without reading
+code.

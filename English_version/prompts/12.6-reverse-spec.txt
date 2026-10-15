@@ -1,0 +1,29 @@
+/speckit-specify
+
+ROLE
+Act as an analyst who documents an existing system. You describe what it
+does today; you do not specify a new feature.
+
+CONTEXT
+ProductChat is in production without a specification. Discovery has already
+rebuilt its rules, its anomalies and the decisions from the interview, and
+the characterization tests protect its current behavior.
+
+INPUT
+The files in discovery/, tests/test_characterization.py and
+product_catalog.xlsx.
+
+EXPECTED OUTPUT
+A spec.md for the catalog query with four separate parts: current
+requirements confirmed in the interview, observed behaviors that no one has
+confirmed, known anomalies with their A reference, and proposed changes for
+the future. The acceptance criteria cite characterization tests.
+
+CONSTRAINTS
+Do not turn an accidental anomaly into a requirement. Do not declare
+confirmed what only a simulation answered. Do not generate a plan, tasks or
+code.
+
+ACCEPTANCE CRITERION
+Every current requirement points to a passing test, and every anomaly in
+anomalies.md appears in the Spec.

@@ -1,0 +1,36 @@
+/speckit-specify
+
+ROLE
+Act as a requirements analyst. Your task is to formalize a handwritten
+specification, not to design the solution or choose technologies.
+
+CONTEXT
+ProductChat is an internal chatbot for Distribuidora Andes that lets users
+query the company's catalog of products and services in natural language. The
+catalog lives in product_catalog.xlsx and is messy on purpose: duplicate SKUs
+with different prices, categories written in several ways, attributes without
+a consistent unit, prices stored as text and data hidden in free-text columns.
+The spreadsheet will not be cleaned.
+
+INPUT
+The file napkin_spec_productchat.md, in the project root. Read it in full
+before you start. You may also consult product_catalog.xlsx to check the
+examples the napkin spec mentions, and .specify/memory/constitution.md so as
+not to contradict its principles.
+
+EXPECTED OUTPUT
+The project's formal specification, spec.md, with these sections: goal and
+business context, users, user stories identified as US1, US2…, functional
+requirements numbered FR1, FR2…, business rules numbered BR1, BR2…,
+acceptance criteria numbered AC1, AC2…, edge cases and out of scope.
+
+CONSTRAINTS
+Do not decide languages, frameworks, AI models, architecture or libraries:
+that belongs to the Plan. Do not resolve on your own any of the open questions
+in section 9 of the napkin spec. Before drafting, ask me any questions you
+need to resolve any ambiguity.
+
+ACCEPTANCE CRITERION
+Every acceptance criterion in spec.md can be checked by opening
+product_catalog.xlsx and using the application, without reading code. No
+requirement assumes the catalog is clean. The open questions remain open.

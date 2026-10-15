@@ -1,0 +1,37 @@
+/speckit-specify
+
+ROLE
+Act as a requirements analyst. You formalize a business decision that has
+already been made; you neither design it nor implement it.
+
+CONTEXT
+An urgent fix hid out-of-stock products from the chatbot without going
+through SDD, and the audit found that it also hid available products and
+services. The need is legitimate; the rule was wrong. This Spec also resolves
+open question OQ2 from the napkin spec: when a salesperson asks what we
+"have", they are asking about what can be sold today.
+
+INPUT
+The spec.md of SPEC001, the audit report, .specify/memory/constitution.md,
+and product_catalog.xlsx.
+
+EXPECTED OUTPUT
+The spec.md of the new Spec, which references SPEC001 and SPEC003 and states
+explicitly which acceptance criteria of SPEC001 change.
+
+RULES ALREADY DECIDED
+- Out of stock (0 or "sold out"): the product does not appear in answers.
+- Available (a number greater than zero, "Yes" or "yes"): it appears.
+- Stock not reported (empty cell): it appears, with a notice.
+- Services: stock does not apply, and they are never hidden.
+- The rules apply to all queries, with or without filters.
+
+CONSTRAINTS
+Inspect the existing code and distinguish what already meets the rule from
+what needs to be fixed. Do not accept a behavior just because it is already
+implemented. Out of scope: modifying the catalog and managing inventory.
+
+ACCEPTANCE CRITERION
+The Spec updates AC1 of SPEC001: "which notebooks have 32 GB of RAM?" now
+returns NB-1005, NB-1007, and NB-1012. NB-1007 appears, NB-1009 does not, and
+SRV-5001 still appears.
