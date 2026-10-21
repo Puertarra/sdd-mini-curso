@@ -4,7 +4,7 @@ Part one ended with ProductChat up and running. From here on the product starts 
 
 In part one we claimed many times that SDD is traceable, that every part of the code can be followed back to the specification that asked for it. Without version control, that claim is rhetoric: you can say it, but you cannot check it. Git makes it verifiable, because it stores the requirement and the code that implements it together, in the same commit.
 
-This module uses Git only as far as SDD needs it. It is not a Git course: one branch per Spec, commits per stage and a context file for the agent are enough. If Git is new to you, or you need to recall a command, the annex [`A-Git_mini_manual.md`](A-Git_mini_manual.md) collects every command the course uses, with ProductChat examples.
+This module uses Git only as far as SDD needs it. It is not a Git course: one branch per Spec, commits per stage and a context file for the agent are enough. If Git is new to you, or you need to recall a command, the annex [`A-Git_mini_manual.md`](A-Git_mini_manual.md) collects every command the course uses, with ProductChat examples. If you work in a group, the annex [`B-Teamwork_with_SDD.md`](B-Teamwork_with_SDD.md) explains how to share roles, review Specs and integrate.
 
 ## What goes under version control
 

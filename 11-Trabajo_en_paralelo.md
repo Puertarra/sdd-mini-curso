@@ -6,6 +6,8 @@ El riesgo principal no son los conflictos que detecta Git. Son los que Git no pu
 
 Una advertencia antes de empezar: agregar agentes no garantiza terminar antes. Paralelizar ahorra tiempo solo si las tareas son realmente independientes y si coordinar e integrar cuesta menos que hacerlas en serie. En un proyecto del tamaño de ProductChat, la lección vale más que el ahorro.
 
+Este módulo trata el paralelismo entre agentes que coordinas tú. Si el trabajo se reparte entre personas de un equipo, las reglas y prácticas están en el anexo [`B-SDD_en_equipo.md`](B-SDD_en_equipo.md).
+
 ## Qué se puede paralelizar y qué no
 
 La independencia no se juzga por el nombre de las tareas, sino por lo que comparten. Dos tareas con nombres distintos pueden depender de la misma regla, el mismo componente o el mismo archivo:

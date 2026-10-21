@@ -6,6 +6,8 @@ The main risk is not the conflicts Git detects. It is the ones Git cannot see: t
 
 A warning before you start: adding agents does not guarantee finishing sooner. Parallelizing saves time only if the tasks are truly independent and if coordinating and integrating costs less than doing them in sequence. In a project the size of ProductChat, the lesson is worth more than the time saved.
 
+This module covers parallelism between agents that you coordinate. If the work is split among people in a team, the rules and practices are in the annex [`B-Teamwork_with_SDD.md`](B-Teamwork_with_SDD.md).
+
 ## What can be parallelized and what cannot
 
 Independence is not judged by the names of the tasks, but by what they share. Two tasks with different names can depend on the same rule, the same component or the same file:

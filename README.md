@@ -43,11 +43,12 @@ Ese desorden no es casual. Es lo que obliga a que la especificación decida cosa
 | [`11-Trabajo_en_paralelo.md`](11-Trabajo_en_paralelo.md) | Dos agentes, dos capacidades y los conflictos de significado que Git no ve |
 | [`12-Reverse_Specs.md`](12-Reverse_Specs.md) | Reconstruir la Spec de un sistema existente. Actividad final del curso |
 
-### Anexo
+### Anexos
 
 | Archivo | Contenido |
 |---|---|
 | [`A-Mini_manual_de_Git.md`](A-Mini_manual_de_Git.md) | Los comandos de Git que usa el curso, con ejemplos de ProductChat, convenciones y cómo deshacer errores |
+| [`B-SDD_en_equipo.md`](B-SDD_en_equipo.md) | Reglas y prácticas para aplicar SDD en grupo: acuerdo de equipo, coordinación de Specs entre computadores, agentes distintos, roles, revisión de Specs, puerta de integración y qué hacer cuando no todos usan SDD |
 
 Los módulos están pensados para leerse en orden. El `01` contiene el vocabulario y el contrato de prompt que usan todos los demás, así que conviene no saltárselo. La segunda parte parte de un ProductChat ya implementado al terminar la primera.
 

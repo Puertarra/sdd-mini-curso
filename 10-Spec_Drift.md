@@ -348,6 +348,8 @@ La práctica que más drift evita es aburrida: cada criterio de aceptación tien
 
 La segunda es auditar después de cada cambio urgente, no al cierre del sprint. El prompt `10.2` no depende de este caso: sirve igual para cualquier rama.
 
+En un equipo hay una tercera: una puerta de integración, por la que nada entra en `main` sin respaldo en una Spec. El anexo [`B-SDD_en_equipo.md`](B-SDD_en_equipo.md) la describe, con un comando de comprobación y una plantilla de *pull request*.
+
 ## Actividad práctica
 
 Reproduce el caso completo en tu ProductChat: crea la rama, aplica el parche con `10.1`, comprueba la tabla del caso contra tu implementación, audita, formaliza SPEC004, corrige y vuelve a auditar.

@@ -352,6 +352,8 @@ The practice that prevents the most drift is boring: every acceptance criterion 
 
 The second is to audit after every urgent change, not at the end of the sprint. Prompt `10.2` does not depend on this case: it works just as well for any branch.
 
+In a team there is a third one: an integration gate, through which nothing enters `main` without the backing of a Spec. The annex [`B-Teamwork_with_SDD.md`](B-Teamwork_with_SDD.md) describes it, with a check command and a *pull request* template.
+
 ## Hands-on activity
 
 Reproduce the whole case in your ProductChat: create the branch, apply the patch with `10.1`, check the case table against your implementation, audit, formalize SPEC004, fix, and audit again.

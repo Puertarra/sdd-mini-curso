@@ -43,11 +43,12 @@ That mess is not an accident. It is what forces the Specification to decide thin
 | [`11-Parallel_work.md`](11-Parallel_work.md) | Two agents, two capabilities, and the conflicts of meaning that Git cannot see |
 | [`12-Reverse_Specs.md`](12-Reverse_Specs.md) | Rebuilding the Spec of an existing system. Final activity of the course |
 
-### Annex
+### Annexes
 
 | File | Contents |
 |---|---|
 | [`A-Git_mini_manual.md`](A-Git_mini_manual.md) | The Git commands the course uses, with ProductChat examples, conventions, and how to undo mistakes |
+| [`B-Teamwork_with_SDD.md`](B-Teamwork_with_SDD.md) | Rules and practices for applying SDD in a group: team agreement, coordinating Specs across computers, different agents, roles, Spec review, integration gate, and what to do when not everyone uses SDD |
 
 The modules are meant to be read in order. Module `01` contains the vocabulary and the prompt contract that all the others use, so don't skip it. The second part starts from the ProductChat you have implemented by the end of the first part.
 

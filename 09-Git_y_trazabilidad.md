@@ -4,7 +4,7 @@ La primera parte terminó con ProductChat funcionando. A partir de aquí el prod
 
 En la primera parte afirmamos muchas veces que SDD es trazable, que cada parte del código se puede seguir hasta la especificación que la pidió. Sin control de versiones, esa afirmación es retórica: puedes decirla, pero no comprobarla. Git la vuelve verificable, porque guarda juntos, en el mismo commit, el requisito y el código que lo implementa.
 
-Este módulo usa Git solo en lo que SDD necesita. No es un curso de Git: bastan una rama por Spec, commits por etapa y un archivo de contexto para el agente. Si Git es nuevo para ti, o necesitas recordar un comando, el anexo [`A-Mini_manual_de_Git.md`](A-Mini_manual_de_Git.md) reúne todos los que usa el curso, con ejemplos de ProductChat.
+Este módulo usa Git solo en lo que SDD necesita. No es un curso de Git: bastan una rama por Spec, commits por etapa y un archivo de contexto para el agente. Si Git es nuevo para ti, o necesitas recordar un comando, el anexo [`A-Mini_manual_de_Git.md`](A-Mini_manual_de_Git.md) reúne todos los que usa el curso, con ejemplos de ProductChat. Si trabajas en grupo, el anexo [`B-SDD_en_equipo.md`](B-SDD_en_equipo.md) explica cómo repartir roles, revisar Specs e integrar.
 
 ## Qué se versiona
 
