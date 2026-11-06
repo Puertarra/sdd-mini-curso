@@ -117,6 +117,20 @@ El número de cada prompt indica el módulo donde se usa y su orden dentro de é
 
 La segunda parte reutiliza sin cambios `03.2`, `05.1`, `06.1` y `07.1` para Clarify, Tareas, Analyze e Implementación: nombran los artefactos de la Spec activa, y Spec Kit sabe cuál es.
 
+## La skill de control de calidad
+
+La carpeta [`skills/sdd-quality-gate/`](skills/sdd-quality-gate/SKILL.md) contiene una skill que aplica el método del curso a cualquier proyecto: revisa cada etapa (Constitución, Especificación, Clarify, Plan, Tareas, Analyze, Implementación e integración) con una lista de controles, y no deja avanzar a la siguiente hasta que la etapa pase. Detecta si el proyecto usa Spec Kit; si no, pregunta dónde están los documentos equivalentes. Después de cada puerta entrega un informe con el veredicto, la evidencia y el siguiente paso.
+
+Para instalarla, copia la carpeta `sdd-quality-gate/` completa:
+
+| Agente | Dónde |
+|---|---|
+| Claude Code | `~/.claude/skills/` para todos tus proyectos, o `.claude/skills/` dentro de un proyecto |
+| Codex | `.agents/skills/` dentro del proyecto |
+| Aplicación de Claude | En la configuración de skills, subiendo la carpeta comprimida en `.zip` |
+
+Se activa cuando dices que quieres trabajar con SDD o cuando pides revisar una etapa, por ejemplo: "revisa si la especificación está lista para planificar". La versión en inglés está en `English_version/skills/`.
+
 ## Requisitos
 
 - Un agente de código: Claude Code o Codex.

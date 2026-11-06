@@ -117,6 +117,20 @@ The number of each prompt indicates the module where it is used and its order wi
 
 The second part reuses `03.2`, `05.1`, `06.1` and `07.1` unchanged for Clarify, Tasks, Analyze and Implementation: they name the artifacts of the active Spec, and Spec Kit knows which one that is.
 
+## The quality-gate skill
+
+The folder [`skills/sdd-quality-gate/`](skills/sdd-quality-gate/SKILL.md) contains a skill that applies the course method to any project: it reviews each stage (Constitution, Specification, Clarify, Plan, Tasks, Analyze, Implementation and integration) against a list of checks, and does not let the next stage start until the current one passes. It detects whether the project uses Spec Kit; if it does not, it asks where the equivalent documents are. After each gate it delivers a report with the verdict, the evidence and the next step.
+
+To install it, copy the whole `sdd-quality-gate/` folder:
+
+| Agent | Where |
+|---|---|
+| Claude Code | `~/.claude/skills/` for all your projects, or `.claude/skills/` inside a project |
+| Codex | `.agents/skills/` inside the project |
+| Claude app | In the skills settings, by uploading the folder as a `.zip` |
+
+It activates when you say you want to work with SDD or when you ask for a stage review, for example: "check whether the specification is ready for planning". The Spanish version is in `../skills/`.
+
 ## Requirements
 
 - A coding agent: Claude Code or Codex.
