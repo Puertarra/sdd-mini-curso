@@ -76,7 +76,7 @@ Una última regla de convivencia: no se edita la Spec de otra persona en su rama
 
 Que unos miembros usen Claude Code y otros Codex no es un problema: las Specs, los planes y las tareas son archivos de texto, y los prompts del curso sirven para los dos agentes. Hay que preparar tres cosas:
 
-1. **Instalar las dos integraciones en el mismo proyecto.** Spec Kit 1.0.8 lo permite sin tocar la Constitución ni las Specs:
+1. **Instalar las dos integraciones en el mismo proyecto.** Spec Kit 1.4.0 lo permite sin tocar la Constitución ni las Specs:
 
    ```bash
    specify init . --integration claude     # al crear el proyecto

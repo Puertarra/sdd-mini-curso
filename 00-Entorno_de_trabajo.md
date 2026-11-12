@@ -38,11 +38,11 @@ La separación es importante porque **método y agente son intercambiables**. Po
 En este curso utilizaremos:
 
 ```text
-Capa de método  → GitHub Spec Kit v1.0.8
+Capa de método  → GitHub Spec Kit v1.4.0
 Capa de agente  → Claude Code o Codex
 ```
 
-> **Sobre la versión.** Spec Kit evoluciona rápido, y la forma de sus operaciones puede cambiar de una versión a otra. Todo el material de este curso está comprobado contra la **versión 1.0.8**. Si instalas otra, revisa la sección "Comprobar la integración" antes de seguir.
+> **Sobre la versión.** Spec Kit evoluciona rápido, y la forma de sus operaciones puede cambiar de una versión a otra. Todo el material de este curso está comprobado contra la **versión 1.4.0**. Si instalas otra, revisa la sección "Comprobar la integración" antes de seguir.
 
 ## 1. Preparar la capa de agente
 
@@ -79,10 +79,10 @@ uv --version
 ## 3. Instalar GitHub Spec Kit
 
 > ⚠️ **Antes de ejecutar este comando, comprueba la versión.** Este material está fijado a la
-> v1.0.8 y comprobado contra ella. Spec Kit se desarrolla rápido, y **la forma de invocar sus
-> operaciones no es estable**: en la 1.0.8 depende del agente, y ni siquiera coincide con la
+> v1.4.0 y comprobado contra ella. Spec Kit se desarrolla rápido, y **la forma de invocar sus
+> operaciones no es estable**: en la 1.4.0 depende del agente, y ni siquiera coincide con la
 > notación que usa su propia documentación. Antes de instalar, revisa las releases del
-> repositorio (`github.com/github/spec-kit`) y decide conscientemente: o instalas la v1.0.8 y el
+> repositorio (`github.com/github/spec-kit`) y decide conscientemente: o instalas la v1.4.0 y el
 > material funciona tal cual, o instalas una más reciente y asumes que tendrás que comprobar los
 > nombres de las operaciones y adaptar los prompts. Lo que no conviene es instalar `@main` sin
 > mirar: es una rama de desarrollo y puede cambiar de un día para otro.
@@ -90,7 +90,7 @@ uv --version
 Instalamos la versión que usa el curso, fijándola explícitamente:
 
 ```bash
-uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.0.8
+uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.4.0
 ```
 
 Esto deja disponible el comando `specify`. Si la terminal responde que no lo encuentra, es porque el directorio de herramientas de uv no está en el `PATH`:
@@ -221,7 +221,7 @@ Una vez iniciado el agente dentro del proyecto, comprobamos que aparecen disponi
 
 El curso escribe las operaciones en la forma de Claude Code. Si usas Codex, cambia la barra por el signo pesos, `$speckit-plan` en lugar de `/speckit-plan`; el resto de cada prompt vale igual.
 
-Vas a encontrar una tercera forma, con punto: `/speckit.specify`. Es la notación de referencia de la documentación oficial de Spec Kit y de muchos tutoriales, pero no es la que escribes en tu agente con la versión 1.0.8.
+Vas a encontrar una tercera forma, con punto: `/speckit.specify`. Es la notación de referencia de la documentación oficial de Spec Kit y de muchos tutoriales, pero no es la que escribes en tu agente con la versión 1.4.0.
 
 En Claude Code, las operaciones del curso son estas:
 

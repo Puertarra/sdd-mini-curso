@@ -277,7 +277,7 @@ The expected result, verifiable against the spreadsheet:
 
 And the query for 32 GB notebooks returns `NB-1005`, `NB-1007`, and `NB-1012`.
 
-Spec Kit 1.0.8 also includes `/speckit-converge`, which reviews the existing code and adds as tasks the work still missing to meet the Spec. It is useful as an extra review after implementation, but it does not replace the audit: converge looks from the Spec to the code, and drift also travels in the opposite direction.
+Spec Kit 1.4.0 also includes `/speckit-converge`, which reviews the existing code and adds as tasks the work still missing to meet the Spec. It is useful as an extra review after implementation, but it does not replace the audit: converge looks from the Spec to the code, and drift also travels in the opposite direction.
 
 When the implementation passes the tests, run the audit again with `10.2`, this time with the initial report as input. Every finding should be marked as resolved. Only then commit and merge:
 

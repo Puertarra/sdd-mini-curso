@@ -30,7 +30,7 @@ Hay un archivo que conviene mirar dos veces: el catálogo. En un proyecto real, 
 
 ## Preparar el repositorio
 
-Spec Kit 1.0.8 **no crea un repositorio Git** al ejecutar `specify init`. Si no lo creaste tú al terminar la primera parte, este es el momento:
+Spec Kit 1.4.0 **no crea un repositorio Git** al ejecutar `specify init`. Si no lo creaste tú al terminar la primera parte, este es el momento:
 
 ```text
 ROL
@@ -40,7 +40,7 @@ versiones; no modificas código ni artefactos.
 CONTEXTO
 ProductChat ya está implementado: la primera parte del curso terminó con su
 código, sus artefactos SDD, catalogo_productos.xlsx y
-spec_servilleta_productchat.md dentro del proyecto. Spec Kit 1.0.8 no crea un
+spec_servilleta_productchat.md dentro del proyecto. Spec Kit 1.4.0 no crea un
 repositorio Git al inicializar un proyecto.
 
 ENTRADA
@@ -81,7 +81,7 @@ Cada Spec nueva se desarrolla en su propia rama y se integra en `main` solo cuan
 git switch -c 003-filtros-catalogo
 ```
 
-Es una convención nuestra, no de Spec Kit. En la versión 1.0.8, `/speckit-specify` **no crea ramas**: eso solo ocurre si instalas la extensión `git`, que dejamos fuera del curso. Tampoco las necesita para funcionar: Spec Kit recuerda cuál es la Spec activa en `.specify/feature.json`, no por el nombre de la rama. Por eso la rama la creas tú, antes de ejecutar `/speckit-specify`.
+Es una convención nuestra, no de Spec Kit. En la versión 1.4.0, `/speckit-specify` **no crea ramas**: eso solo ocurre si instalas la extensión `git`, que dejamos fuera del curso. Tampoco las necesita para funcionar: Spec Kit recuerda cuál es la Spec activa en `.specify/feature.json`, no por el nombre de la rama. Por eso la rama la creas tú, antes de ejecutar `/speckit-specify`.
 
 Dentro de la rama, un commit por cada avance con sentido propio, que es lo que después permite reconstruir el razonamiento:
 
@@ -388,7 +388,7 @@ La entrega es el repositorio, con:
 
 Si tu proyecto acumula varias Specs, puedes agregar un `specs/README.md` con una línea por Spec: identificador, propósito y estado. Con tres Specs que no se pisan entre sí no hace falta; el módulo 10 muestra cuándo se vuelve necesario.
 
-> **Para más adelante: la extensión `git` de Spec Kit.** Spec Kit 1.0.8 incluye una extensión opcional que automatiza parte de lo que en este módulo hiciste a mano. Se instala con `specify extension add git` y funciona mediante *hooks*, acciones que se ejecutan solas antes o después de cada operación: crea la rama `NNN-nombre` antes de cada `/speckit-specify` y, si la configuras, hace un commit antes o después de cada etapa. Es una funcionalidad avanzada, y conviene usarla solo cuando ya domines el flujo manual: crear la rama, decidir qué entra en cada commit y leer el historial resultante. Automatizar un proceso que todavía no entiendes produce un historial que tampoco sabrás leer. Ten en cuenta además que los mensajes automáticos, como `[Spec Kit] Add tasks`, no dicen de qué Spec son: habría que configurarlos para mantener la convención `SPEC003: …`. Y la extensión no resuelve el trabajo en paralelo del módulo 11: crea ramas, pero en una sola carpeta de trabajo.
+> **Para más adelante: la extensión `git` de Spec Kit.** Spec Kit 1.4.0 incluye una extensión opcional que automatiza parte de lo que en este módulo hiciste a mano. Se instala con `specify extension add git` y funciona mediante *hooks*, acciones que se ejecutan solas antes o después de cada operación: crea la rama `NNN-nombre` antes de cada `/speckit-specify` y, si la configuras, hace un commit antes o después de cada etapa. Es una funcionalidad avanzada, y conviene usarla solo cuando ya domines el flujo manual: crear la rama, decidir qué entra en cada commit y leer el historial resultante. Automatizar un proceso que todavía no entiendes produce un historial que tampoco sabrás leer. Ten en cuenta además que los mensajes automáticos, como `[Spec Kit] Add tasks`, no dicen de qué Spec son: habría que configurarlos para mantener la convención `SPEC003: …`. Y la extensión no resuelve el trabajo en paralelo del módulo 11: crea ramas, pero en una sola carpeta de trabajo.
 
 ---
 

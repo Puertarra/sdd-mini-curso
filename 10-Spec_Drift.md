@@ -276,7 +276,7 @@ El resultado esperado, verificable contra la planilla:
 
 Y la consulta de los notebooks de 32 GB devuelve `NB-1005`, `NB-1007` y `NB-1012`.
 
-Spec Kit 1.0.8 incluye además `/speckit-converge`, que revisa el código existente y agrega como tareas el trabajo que falta para cumplir la Spec. Es útil como revisión adicional después de implementar, pero no reemplaza la auditoría: converge mira de la Spec al código, y el drift también viaja en la dirección contraria.
+Spec Kit 1.4.0 incluye además `/speckit-converge`, que revisa el código existente y agrega como tareas el trabajo que falta para cumplir la Spec. Es útil como revisión adicional después de implementar, pero no reemplaza la auditoría: converge mira de la Spec al código, y el drift también viaja en la dirección contraria.
 
 Cuando la implementación pase las pruebas, vuelve a ejecutar la auditoría con `10.2`, ahora con el informe inicial como entrada. Cada hallazgo debería quedar marcado como resuelto. Recién entonces registra e integra:
 

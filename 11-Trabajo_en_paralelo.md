@@ -65,13 +65,13 @@ responsables.
 
 ## Por qué las Specs las crea el coordinador
 
-Parece natural que cada agente cree su propia Spec. Con Spec Kit 1.0.8 eso trae dos problemas, y los dos son concretos.
+Parece natural que cada agente cree su propia Spec. Con Spec Kit 1.4.0 eso trae dos problemas, y los dos son concretos.
 
 El primero es la **Spec activa**. Spec Kit guarda en `.specify/feature.json` cuál es la Spec en curso, y hay un solo archivo por directorio de trabajo. Si dos agentes ejecutan `/speckit-specify` en el mismo directorio, el segundo pisa la Spec activa del primero, y los comandos siguientes del primer agente terminan trabajando sobre la Spec equivocada.
 
 El segundo es la **numeración**. Spec Kit asigna a cada Spec el siguiente número libre que encuentra en la carpeta `specs/` de la rama donde se ejecuta. Una rama creada desde `main` no contiene las Specs que viven en otras ramas, así que dos Specs creadas en ramas distintas reciben el mismo número, 005. El choque aparece recién al integrar.
 
-La salida más simple es que el coordinador cree las dos Specs, una después de la otra, en el directorio principal, y que fije en el prompt el directorio de cada una en lugar de dejar que Spec Kit elija el número. La versión 1.0.8 respeta el directorio si se lo indicas como `SPECIFY_FEATURE_DIRECTORY`, y los dos prompts lo hacen. Cada Spec, en su rama:
+La salida más simple es que el coordinador cree las dos Specs, una después de la otra, en el directorio principal, y que fije en el prompt el directorio de cada una en lugar de dejar que Spec Kit elija el número. La versión 1.4.0 respeta el directorio si se lo indicas como `SPECIFY_FEATURE_DIRECTORY`, y los dos prompts lo hacen. Cada Spec, en su rama:
 
 ```bash
 git switch -c 005-exportar-csv

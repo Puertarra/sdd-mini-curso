@@ -24,7 +24,7 @@ Ese desorden no es casual. Es lo que obliga a que la especificación decida cosa
 
 | Módulo | Contenido |
 |---|---|
-| [`00-Entorno_de_trabajo.md`](00-Entorno_de_trabajo.md) | Las dos capas, instalación de uv y Spec Kit 1.0.8, creación del proyecto |
+| [`00-Entorno_de_trabajo.md`](00-Entorno_de_trabajo.md) | Las dos capas, instalación de uv y Spec Kit 1.4.0, creación del proyecto |
 | [`01-SDD.md`](01-SDD.md) | Qué es SDD, SDD frente a Vibe Coding, el caso del curso, vocabulario y contrato de prompt |
 | [`02-Constitución.md`](02-Constitución.md) | Etapa 1: las reglas permanentes del proyecto |
 | [`03-Especificación.md`](03-Especificación.md) | Etapa 2: qué debe hacer el producto. Incluye la puerta Clarify |
@@ -136,20 +136,20 @@ Se activa cuando dices que quieres trabajar con SDD o cuando pides revisar una e
 - Un agente de código: Claude Code o Codex.
 - [uv](https://docs.astral.sh/uv/), para instalar Spec Kit.
 - Git 2.28 o posterior, desde el módulo 09. El anexo `A` resume los comandos necesarios.
-- GitHub Spec Kit **v1.0.8**:
+- GitHub Spec Kit **v1.4.0**:
 
 ```bash
-uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.0.8
+uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.4.0
 ```
 
-> ⚠️ **Verifica la versión antes de instalar.** Todo el material está fijado a la v1.0.8 y
+> ⚠️ **Verifica la versión antes de instalar.** Todo el material está fijado a la v1.4.0 y
 > comprobado contra ella. Spec Kit se desarrolla rápido, y la forma de invocar sus operaciones no
-> es estable: en la 1.0.8 depende del agente, y no coincide con la notación que usa su propia
+> es estable: en la 1.4.0 depende del agente, y no coincide con la notación que usa su propia
 > documentación. Revisa las releases del repositorio antes de instalar. Si eliges una versión
-> distinta de la v1.0.8, los prompts de `prompts/` pueden necesitar ajustes; el módulo `00` explica
+> distinta de la v1.4.0, los prompts de `prompts/` pueden necesitar ajustes; el módulo `00` explica
 > cómo comprobar los nombres reales de tu instalación.
 
-En la v1.0.8, las operaciones se invocan así:
+En la v1.4.0, las operaciones se invocan así:
 
 | Agente | Forma |
 |---|---|

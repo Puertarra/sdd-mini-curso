@@ -5,7 +5,7 @@ versiones; no modificas código ni artefactos.
 CONTEXTO
 ProductChat ya está implementado: la primera parte del curso terminó con su
 código, sus artefactos SDD, catalogo_productos.xlsx y
-spec_servilleta_productchat.md dentro del proyecto. Spec Kit 1.0.8 no crea un
+spec_servilleta_productchat.md dentro del proyecto. Spec Kit 1.4.0 no crea un
 repositorio Git al inicializar un proyecto.
 
 ENTRADA

@@ -24,7 +24,7 @@ That mess is not an accident. It is what forces the Specification to decide thin
 
 | Module | Contents |
 |---|---|
-| [`00-Work_environment.md`](00-Work_environment.md) | The two layers, installing uv and Spec Kit 1.0.8, creating the project |
+| [`00-Work_environment.md`](00-Work_environment.md) | The two layers, installing uv and Spec Kit 1.4.0, creating the project |
 | [`01-SDD.md`](01-SDD.md) | What SDD is, SDD versus Vibe Coding, the course case, vocabulary and the prompt contract |
 | [`02-Constitution.md`](02-Constitution.md) | Stage 1: the permanent rules of the project |
 | [`03-Specification.md`](03-Specification.md) | Stage 2: what the product must do. Includes the Clarify gate |
@@ -136,20 +136,20 @@ It activates when you say you want to work with SDD or when you ask for a stage 
 - A coding agent: Claude Code or Codex.
 - [uv](https://docs.astral.sh/uv/), to install Spec Kit.
 - Git 2.28 or later, from module 09 onward. Annex `A` summarizes the commands you need.
-- GitHub Spec Kit **v1.0.8**:
+- GitHub Spec Kit **v1.4.0**:
 
 ```bash
-uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.0.8
+uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.4.0
 ```
 
-> ⚠️ **Check the version before installing.** All the material is pinned to v1.0.8 and
+> ⚠️ **Check the version before installing.** All the material is pinned to v1.4.0 and
 > tested against it. Spec Kit evolves quickly, and the way its operations are invoked is not
-> stable: in 1.0.8 it depends on the agent, and it does not match the notation used in its own
+> stable: in 1.4.0 it depends on the agent, and it does not match the notation used in its own
 > documentation. Review the repository releases before installing. If you choose a version
-> other than v1.0.8, the prompts in `prompts/` may need adjustments; module `00` explains
+> other than v1.4.0, the prompts in `prompts/` may need adjustments; module `00` explains
 > how to check the actual names in your installation.
 
-In v1.0.8, operations are invoked like this:
+In v1.4.0, operations are invoked like this:
 
 | Agent | Syntax |
 |---|---|

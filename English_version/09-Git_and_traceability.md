@@ -30,7 +30,7 @@ One file deserves a second look: the catalog. In a real project, a client's data
 
 ## Setting up the repository
 
-Spec Kit 1.0.8 **does not create a Git repository** when you run `specify init`. If you did not create one yourself at the end of part one, now is the time:
+Spec Kit 1.4.0 **does not create a Git repository** when you run `specify init`. If you did not create one yourself at the end of part one, now is the time:
 
 ```text
 ROLE
@@ -40,7 +40,7 @@ control; you do not modify code or artifacts.
 CONTEXT
 ProductChat is already implemented: part one of the course ended with its
 code, its SDD artifacts, product_catalog.xlsx and napkin_spec_productchat.md
-inside the project. Spec Kit 1.0.8 does not create a Git repository when it
+inside the project. Spec Kit 1.4.0 does not create a Git repository when it
 initializes a project.
 
 INPUT
@@ -81,7 +81,7 @@ Each new Spec is developed on its own branch and merged into `main` only once it
 git switch -c 003-catalog-filters
 ```
 
-This is our convention, not Spec Kit's. In version 1.0.8, `/speckit-specify` **does not create branches**: that only happens if you install the `git` extension, which we leave out of the course. Spec Kit does not need branches to work either: it remembers which Spec is active in `.specify/feature.json`, not by the branch name. That is why you create the branch yourself, before running `/speckit-specify`.
+This is our convention, not Spec Kit's. In version 1.4.0, `/speckit-specify` **does not create branches**: that only happens if you install the `git` extension, which we leave out of the course. Spec Kit does not need branches to work either: it remembers which Spec is active in `.specify/feature.json`, not by the branch name. That is why you create the branch yourself, before running `/speckit-specify`.
 
 Inside the branch, make one commit for each step forward that makes sense on its own. That is what later lets you reconstruct the reasoning:
 
@@ -389,7 +389,7 @@ The deliverable is the repository, with:
 
 If your project accumulates several Specs, you can add a `specs/README.md` with one line per Spec: identifier, purpose and status. With three Specs that do not step on each other it is not necessary; module 10 shows when it becomes necessary.
 
-> **For later: the Spec Kit `git` extension.** Spec Kit 1.0.8 includes an optional extension that automates part of what you did by hand in this module. You install it with `specify extension add git`, and it works through *hooks*, actions that run on their own before or after each operation: it creates the `NNN-name` branch before each `/speckit-specify` and, if you configure it, makes a commit before or after each stage. It is an advanced feature, and you should use it only once you have mastered the manual workflow: creating the branch, deciding what goes into each commit and reading the resulting history. Automating a process you do not yet understand produces a history you will not be able to read either. Also keep in mind that the automatic messages, such as `[Spec Kit] Add tasks`, do not say which Spec they belong to: you would have to configure them to keep the `SPEC003: …` convention. And the extension does not solve the parallel work of module 11: it creates branches, but in a single working folder.
+> **For later: the Spec Kit `git` extension.** Spec Kit 1.4.0 includes an optional extension that automates part of what you did by hand in this module. You install it with `specify extension add git`, and it works through *hooks*, actions that run on their own before or after each operation: it creates the `NNN-name` branch before each `/speckit-specify` and, if you configure it, makes a commit before or after each stage. It is an advanced feature, and you should use it only once you have mastered the manual workflow: creating the branch, deciding what goes into each commit and reading the resulting history. Automating a process you do not yet understand produces a history you will not be able to read either. Also keep in mind that the automatic messages, such as `[Spec Kit] Add tasks`, do not say which Spec they belong to: you would have to configure them to keep the `SPEC003: …` convention. And the extension does not solve the parallel work of module 11: it creates branches, but in a single working folder.
 
 ---
 

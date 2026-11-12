@@ -64,13 +64,13 @@ Each common rule has exactly one owning Spec, and no file has two owners.
 
 ## Why the coordinator creates the Specs
 
-It seems natural for each agent to create its own Spec. With Spec Kit 1.0.8 that brings two problems, and both are concrete.
+It seems natural for each agent to create its own Spec. With Spec Kit 1.4.0 that brings two problems, and both are concrete.
 
 The first is the **active Spec**. Spec Kit stores in `.specify/feature.json` which Spec is in progress, and there is a single file per working directory. If two agents run `/speckit-specify` in the same directory, the second one overwrites the first one's active Spec, and the first agent's next commands end up working on the wrong Spec.
 
 The second is **numbering**. Spec Kit assigns each Spec the next free number it finds in the `specs/` folder of the branch where it runs. A branch created from `main` does not contain the Specs that live on other branches, so two Specs created on different branches get the same number, 005. The collision only shows up at integration time.
 
-The simplest way out is for the coordinator to create both Specs, one after the other, in the main directory, and to set each one's directory in the prompt instead of letting Spec Kit choose the number. Version 1.0.8 respects the directory if you give it as `SPECIFY_FEATURE_DIRECTORY`, and both prompts do so. Each Spec, on its own branch:
+The simplest way out is for the coordinator to create both Specs, one after the other, in the main directory, and to set each one's directory in the prompt instead of letting Spec Kit choose the number. Version 1.4.0 respects the directory if you give it as `SPECIFY_FEATURE_DIRECTORY`, and both prompts do so. Each Spec, on its own branch:
 
 ```bash
 git switch -c 005-csv-export

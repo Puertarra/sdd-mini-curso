@@ -5,7 +5,7 @@ control; you do not modify code or artifacts.
 CONTEXT
 ProductChat is already implemented: part one of the course ended with its
 code, its SDD artifacts, product_catalog.xlsx and napkin_spec_productchat.md
-inside the project. Spec Kit 1.0.8 does not create a Git repository when it
+inside the project. Spec Kit 1.4.0 does not create a Git repository when it
 initializes a project.
 
 INPUT
