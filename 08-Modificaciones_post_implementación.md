@@ -257,6 +257,8 @@ Validación
 
 La ventaja es que ProductChat puede evolucionar sin perder la trazabilidad de **qué se pidió, por qué se modificó, cómo se decidió implementarlo y qué tareas produjeron finalmente el cambio en el código**.
 
+> **Para más adelante: la extensión `bug` de Spec Kit.** Corregir un error no siempre exige recorrer el ciclo de este módulo. Spec Kit 1.4.0 incluye una extensión opcional, que se instala con `specify extension add bug`, con tres operaciones. `/speckit-bug-assess` diagnostica el reporte contra el código sin modificarlo. `/speckit-bug-fix` aplica la corrección, limitada a los archivos que identificó el diagnóstico. `/speckit-bug-test` verifica la corrección con pruebas. Cada error queda registrado en `.specify/bugs/<nombre>/`, con un informe por etapa. La extensión sirve cuando el código no cumple lo que la Spec ya dice. Si el error revela que la Spec estaba mal escrita, el camino es el de este módulo, porque la extensión corrige código y no toca las Specs. Usarla en ese caso produce el desfase que estudia el módulo 10.
+
 ---
 
 © 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

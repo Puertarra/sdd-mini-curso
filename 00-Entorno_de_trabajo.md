@@ -108,7 +108,7 @@ specify --version
 Debería responder:
 
 ```text
-specify 1.0.8
+specify 1.4.0
 ```
 
 Spec Kit no sustituye al agente. Su función es proporcionar la estructura, los templates, los scripts y las instrucciones que permiten al agente trabajar siguiendo SDD.
@@ -252,7 +252,7 @@ Spec Kit dice QUÉ PROCESO seguir.
 El agente ejecuta ese proceso.
 ```
 
-Spec Kit 1.0.8 instala además `/speckit-checklist`, que usaremos en el módulo 08; `/speckit-converge`, que evalúa el código existente y añade el trabajo pendiente como tareas, y que aparece en el módulo 10; y `/speckit-taskstoissues`, que queda fuera del curso.
+Spec Kit 1.4.0 instala además `/speckit-checklist`, que usaremos en el módulo 08, y `/speckit-converge`, que evalúa el código existente y añade el trabajo pendiente como tareas, y que aparece en el módulo 10. Hasta la versión 1.2, el core incluía también `/speckit-taskstoissues`. Desde la 1.3.0 está en la extensión opcional `github`, que queda fuera del curso.
 
 > **Si instalaste otra versión.** Los nombres y la forma de invocar las operaciones pueden cambiar entre versiones de Spec Kit. Puedes ver los nombres exactos de tu instalación listando el directorio correspondiente, `ls .claude/skills/` o `ls .agents/skills/`, y sustituirlos en los prompts del curso.
 

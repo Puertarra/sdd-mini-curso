@@ -259,6 +259,8 @@ Validation
 
 The advantage is that ProductChat can evolve without losing traceability of **what was requested, why it was changed, how it was decided to implement it, and which tasks finally produced the change in the code**.
 
+> **For later: the Spec Kit `bug` extension.** Fixing a defect does not always require going through the cycle in this module. Spec Kit 1.4.0 includes an optional extension, installed with `specify extension add bug`, with three operations. `/speckit-bug-assess` diagnoses the report against the code without modifying it. `/speckit-bug-fix` applies the fix, limited to the files the diagnosis identified. `/speckit-bug-test` verifies the fix with tests. Each defect is recorded in `.specify/bugs/<name>/`, with one report per stage. The extension is useful when the code does not do what the Spec already says. If the defect reveals that the Spec itself was wrong, the path is the one in this module, because the extension fixes code and does not touch the Specs. Using it in that case produces the drift studied in module 10.
+
 ---
 
 © 2026 Andrés Leiva-Araos · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) · [github.com/Puertarra/sdd-mini-curso](https://github.com/Puertarra/sdd-mini-curso)

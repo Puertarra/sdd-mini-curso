@@ -37,7 +37,7 @@ El curso trabaja **flow-forward**. En este módulo, SPEC004 no repite SPEC001: c
 
 En el módulo 09 ese índice era opcional. Desde que una Spec reemplaza parte de otra, es necesario. El índice dice qué Specs existen; al final del módulo generaremos además una vista con los requisitos que rigen hoy.
 
-Böckeler, B. (2025). [*Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl*](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html). martinfowler.com. · GitHub. *Spec Kit v1.0.8*, documentación: `docs/concepts/spec-persistence.md`.
+Böckeler, B. (2025). [*Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl*](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html). martinfowler.com. · GitHub. *Spec Kit v1.4.0*, documentación: `docs/how-to/persisting-specs.md`.
 
 ## Qué es el drift, y qué no
 
